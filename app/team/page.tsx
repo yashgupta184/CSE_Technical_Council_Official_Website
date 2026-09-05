@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
@@ -13,7 +12,6 @@ import {
   TerminalIcon,
 } from "@/components/Icons";
 import {
-  cellsData,
   councilCoordinator,
   facultyCoordinators,
   studentCoordinators,
@@ -91,117 +89,9 @@ export default function TeamPage() {
         </section>
 
         {/* ==================================================================== */}
-        {/* SECTION 2: THREE CELLS */}
+        {/* SECTION 2: CTC COORDINATOR */}
         {/* ==================================================================== */}
-        <section id="cells" className="border-y border-slate-200/80 bg-white py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Section Header */}
-            <div className="mb-14 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-              <div>
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 font-mono text-xs font-bold text-blue-600">
-                  <span>⚡</span> THREE CELLS
-                </div>
-                <h2 className="mt-3 font-sans text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
-                  THREE CELLS. <span className="text-gradient-primary">ONE COUNCIL.</span>
-                </h2>
-              </div>
-              <p className="max-w-md text-sm text-slate-600 leading-relaxed">
-                Explore the dedicated wings driving applied innovation, scientific research,
-                and high-speed competitive programming.
-              </p>
-            </div>
-
-            {/* Cell Cards Grid (100xSchool style rounded cards with vibrant badges) */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {cellsData.map((cell) => {
-                const isAIC = cell.id === "AIC";
-                const isRAC = cell.id === "RAC";
-
-                const theme = isAIC
-                  ? {
-                      pill: "bg-blue-600",
-                      badge: "bg-blue-50 text-blue-700 border-blue-100",
-                      tag: "bg-blue-50/50 text-blue-700 border-blue-100",
-                      hoverBorder: "hover:border-blue-400 hover:shadow-blue-500/10",
-                      textGrad: "from-blue-600 to-indigo-600",
-                    }
-                  : isRAC
-                  ? {
-                      pill: "bg-purple-600",
-                      badge: "bg-purple-50 text-purple-700 border-purple-100",
-                      tag: "bg-purple-50/50 text-purple-700 border-purple-100",
-                      hoverBorder: "hover:border-purple-400 hover:shadow-purple-500/10",
-                      textGrad: "from-purple-600 to-indigo-600",
-                    }
-                  : {
-                      pill: "bg-emerald-600",
-                      badge: "bg-emerald-50 text-emerald-700 border-emerald-100",
-                      tag: "bg-emerald-50/50 text-emerald-700 border-emerald-100",
-                      hoverBorder: "hover:border-emerald-400 hover:shadow-emerald-500/10",
-                      textGrad: "from-emerald-600 to-teal-600",
-                    };
-
-                return (
-                  <Link
-                    key={cell.id}
-                    href={cell.route}
-                    className={`group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/50 p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:bg-white hover:shadow-xl ${theme.hoverBorder}`}
-                  >
-                    <div>
-                      {/* Top Header info */}
-                      <div className="flex items-center justify-between border-b border-slate-200/80 pb-4">
-                        <span
-                          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-0.5 font-mono text-xs font-bold ${theme.badge}`}
-                        >
-                          <span className={`h-1.5 w-1.5 rounded-full ${theme.pill}`} />
-                          CELL // {cell.id}
-                        </span>
-                        <span className="font-mono text-sm font-bold text-slate-400">
-                          {cell.number}
-                        </span>
-                      </div>
-
-                      {/* Cell Title */}
-                      <div className="mt-6">
-                        <h3 className="font-sans text-3xl font-black tracking-tight text-slate-950">
-                          {cell.id}
-                        </h3>
-                        <div
-                          className={`mt-1 bg-gradient-to-r ${theme.textGrad} bg-clip-text font-mono text-xs font-extrabold tracking-wider text-transparent uppercase`}
-                        >
-                          {cell.title}
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <p className="mt-4 text-xs leading-relaxed text-slate-600">
-                        {cell.description}
-                      </p>
-
-                      {/* Focus Tag */}
-                      <div
-                        className={`mt-5 rounded-xl border p-3 font-mono text-[11px] font-medium leading-normal ${theme.tag}`}
-                      >
-                        {cell.focus}
-                      </div>
-                    </div>
-
-                    {/* Footer Explore action */}
-                    <div className="mt-8 flex items-center justify-between border-t border-slate-200/80 pt-4 font-sans text-xs font-bold text-slate-700 transition-colors group-hover:text-blue-600">
-                      <span>Explore Cell Page</span>
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ==================================================================== */}
-        {/* SECTION 3: CTC COORDINATOR */}
-        {/* ==================================================================== */}
-        <section className="relative py-24 bg-[#F8FAFC]">
+        <section id="coordinator" className="relative py-24 bg-[#F8FAFC] border-t border-slate-200/80">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 font-mono text-xs font-bold text-blue-700">
               <span>🎯</span> 01 {"//"} COUNCIL COORDINATOR
@@ -403,9 +293,9 @@ export default function TeamPage() {
         </section>
 
         {/* ==================================================================== */}
-        {/* SECTION 6: COMPLETE TEAM */}
+        {/* SECTION 5: COMPLETE TEAM */}
         {/* ==================================================================== */}
-        <section className="border-t border-slate-200/80 bg-white py-24">
+        <section id="team" className="border-t border-slate-200/80 bg-white py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header & Filter Controls */}
             <div className="mb-12 flex flex-col justify-between gap-6 border-b border-slate-100 pb-8 lg:flex-row lg:items-end">
@@ -423,7 +313,7 @@ export default function TeamPage() {
 
               {/* 100xSchool style Filter Tabs */}
               <div className="flex flex-wrap items-center gap-1.5 rounded-2xl border border-slate-200 bg-slate-50 p-1.5 font-mono text-xs shadow-xs">
-                {(["ALL", "AIC", "RAC", "CPC", "CORE"] as const).map((filter) => {
+                {(["ALL", "AIC", "RAC", "CPC"] as const).map((filter) => {
                   const isActive = selectedCellFilter === filter;
                   return (
                     <button
@@ -453,7 +343,7 @@ export default function TeamPage() {
         </section>
 
         {/* ==================================================================== */}
-        {/* SECTION 7: STRONG CLOSING CTA */}
+        {/* SECTION 6: STRONG CLOSING CTA */}
         {/* ==================================================================== */}
         <section id="join" className="relative overflow-hidden py-24 bg-[#F8FAFC]">
           <div className="bg-dot-pattern absolute inset-0 opacity-50" />
@@ -476,10 +366,10 @@ export default function TeamPage() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="#cells"
+                href="#team"
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 font-sans text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/35 sm:w-auto"
               >
-                <span>Explore The Three Cells</span>
+                <span>Explore Full Team</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
