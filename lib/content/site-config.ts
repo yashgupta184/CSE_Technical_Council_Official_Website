@@ -1,0 +1,28 @@
+export const siteConfig = {
+  name: "CSE Technical Council",
+  logo: "/logo.svg",
+  description: "A student-faculty initiative at JSS University, Noida, building a collaborative ecosystem for hands-on learning, innovation, research, and real-world problem-solving.",
+  url: "https://csetc.jssaten.ac.in", // TODO: Replace with actual domain
+  links: {
+    instagram: "#", // TODO: confirm handles
+    linkedin: "#", // TODO: confirm handles
+    email: "mailto:csetc@jssaten.ac.in", // TODO: confirm email
+  },
+  joinUrl: process.env.NEXT_PUBLIC_JOIN_URL || "#", // TODO: wire to env var once verified
+};
+
+export const navItems = [
+  { title: "Home", href: "/" },
+  { title: "Events", href: "/events" },
+  {
+    title: "Cells",
+    href: "/cells",
+    items: [
+      { title: "All Cells", href: "/cells" },
+      { title: "AIC — Innovation", href: "/cells#aic" },
+      { title: "RAC — Research", href: "/cells#rac" },
+      { title: "CPC — Competitive Prog.", href: "/cells#cpc" },
+    ],
+  },
+  { title: "Team", href: "/team" },
+];

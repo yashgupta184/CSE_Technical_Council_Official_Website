@@ -1,34 +1,212 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-border: var(--surface-border);
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #eff6ff;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+
   --font-sans: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --surface-border: #e2e8f0;
+  color-scheme: light;
+}
+
+html.dark {
+  --background: #090d16;
+  --foreground: #f8fafc;
+  --surface: #0f172a;
+  --surface-muted: #131c31;
+  --surface-border: #1e293b;
+  color-scheme: dark;
 }
 
 html {
-  color-scheme: light;
   scroll-behavior: smooth;
 }
 
+/* ========================================================================== */
+/* CUSTOM SCROLLBAR                                                           */
+/* ========================================================================== */
+/* Firefox / spec-compliant browsers. Kept slim with a brand-tinted thumb;
+   the track stays close to the page background so it reads as part of the
+   surface rather than a chrome element. */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #93c5fd var(--surface-muted);
+}
+
+html.dark {
+  scrollbar-color: #334155 #0b1220;
+}
+
+/* WebKit / Blink. */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, #93c5fd 0%, #60a5fa 100%);
+  /* Inset border keeps a gap between thumb and track edges. */
+  border: 3px solid transparent;
+  background-clip: content-box;
+  transition: background 160ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+  background-clip: content-box;
+}
+
+/* Where both axes meet — leave it flat instead of the default OS artefact. */
+::-webkit-scrollbar-corner {
+  background: var(--surface-muted);
+}
+
+html.dark ::-webkit-scrollbar-track,
+html.dark ::-webkit-scrollbar-corner {
+  background: #0b1220;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  background-clip: content-box;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #475569 0%, #334155 100%);
+  background-clip: content-box;
+}
+
+/* Opt-in slim variant for scrollable panels (filter rows, gallery strips)
+   where a full-width bar would crowd the content. */
+.scrollbar-slim::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-slim::-webkit-scrollbar-thumb {
+  border-width: 1px;
+}
+
+/* Desktop-only cursor enhancement with theme-aware contrast. */
+.custom-cursor-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.custom-cursor-core,
+.custom-cursor-halo,
+.custom-cursor-trail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 999px;
+  color: #0f172a;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+html.dark .custom-cursor-core,
+html.dark .custom-cursor-halo,
+html.dark .custom-cursor-trail {
+  color: #f8fafc;
+}
+
+.custom-cursor-core {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+  transition: width 160ms ease, height 160ms ease, margin 160ms ease;
+}
+
+.custom-cursor-halo {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid currentColor;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  filter: blur(1px);
+  transition: width 180ms ease, height 180ms ease, margin 180ms ease, opacity 180ms ease;
+}
+
+.custom-cursor-trail {
+  width: 7px;
+  height: 3px;
+  margin: -1.5px 0 0 -3.5px;
+  background: currentColor;
+  filter: blur(2px);
+}
+
+html.custom-cursor-enabled,
+html.custom-cursor-enabled * {
+  cursor: none !important;
+}
+
+html.custom-cursor-enabled .custom-cursor-core,
+html.custom-cursor-enabled .custom-cursor-halo {
+  opacity: 1;
+}
+
+html.custom-cursor-hover .custom-cursor-core {
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+}
+
+html.custom-cursor-hover .custom-cursor-halo {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* 100xSchool Technical & Dot Grids */
 .bg-grid-pattern {
   background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
@@ -59,3 +237,182 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+::selection {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* Subtle tech grid pattern for 100xschool aesthetic */
+.tech-grid-light {
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+}
+
+/* ========================================================================== */
+/* DARK MODE UTILITY OVERRIDES & POLISH                                      */
+/* ========================================================================== */
+html.dark body {
+  background-color: #090d16 !important;
+  color: #f8fafc !important;
+}
+
+/* Base backgrounds & Containers */
+html.dark [class*="bg-[#F8FAFC]"],
+html.dark [class*="bg-[#F8F9FB]"],
+html.dark [class*="bg-[#f8fafc]"],
+html.dark [class*="bg-[#f8f9fb]"],
+html.dark main,
+html.dark [class*="min-h-screen"] {
+  background-color: #090d16 !important;
+}
+
+/* Card & Surface Backgrounds */
+html.dark [class*="bg-white"]:not([class*="bg-white/"]):not([class*="bg-white\\/"]) {
+  background-color: #0f172a !important;
+}
+
+html.dark [class*="bg-white/"],
+html.dark [class*="bg-white\\/"] {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+}
+
+html.dark [class*="bg-slate-50"],
+html.dark [class*="bg-gray-50"] {
+  background-color: #131c31 !important;
+}
+
+html.dark [class*="bg-slate-100"],
+html.dark [class*="bg-gray-100"] {
+  background-color: #1e293b !important;
+}
+
+/* Colored accent badges in dark mode */
+html.dark [class*="bg-blue-50"],
+html.dark [class*="bg-blue-100"] {
+  background-color: rgba(37, 99, 235, 0.18) !important;
+}
+
+html.dark [class*="bg-indigo-50"],
+html.dark [class*="bg-indigo-100"] {
+  background-color: rgba(99, 102, 241, 0.18) !important;
+}
+
+html.dark [class*="bg-purple-50"],
+html.dark [class*="bg-purple-100"] {
+  background-color: rgba(168, 85, 247, 0.18) !important;
+}
+
+html.dark [class*="bg-emerald-50"],
+html.dark [class*="bg-emerald-100"] {
+  background-color: rgba(16, 185, 129, 0.18) !important;
+}
+
+html.dark [class*="bg-amber-50"],
+html.dark [class*="bg-amber-100"] {
+  background-color: rgba(245, 158, 11, 0.18) !important;
+}
+
+html.dark [class*="bg-pink-50"],
+html.dark [class*="bg-pink-100"] {
+  background-color: rgba(236, 72, 153, 0.18) !important;
+}
+
+/* Maintain bright primary action buttons */
+html.dark [class*="bg-blue-600"],
+html.dark .bg-blue-600 {
+  background-color: #2563eb !important;
+}
+
+html.dark [class*="bg-indigo-600"],
+html.dark .bg-indigo-600 {
+  background-color: #4f46e5 !important;
+}
+
+/* Typography in dark mode */
+html.dark [class*="text-slate-950"],
+html.dark [class*="text-slate-900"],
+html.dark [class*="text-slate-800"],
+html.dark [class*="text-gray-900"],
+html.dark [class*="text-gray-800"],
+html.dark [class*="text-zinc-900"] {
+  color: #f8fafc !important;
+}
+
+html.dark [class*="text-slate-700"],
+html.dark [class*="text-slate-600"],
+html.dark [class*="text-gray-700"],
+html.dark [class*="text-gray-600"] {
+  color: #cbd5e1 !important;
+}
+
+html.dark [class*="text-slate-500"],
+html.dark [class*="text-slate-400"],
+html.dark [class*="text-gray-500"],
+html.dark [class*="text-gray-400"] {
+  color: #94a3b8 !important;
+}
+
+/* Tinted text in dark mode */
+html.dark [class*="text-blue-700"],
+html.dark [class*="text-blue-600"] {
+  color: #60a5fa !important;
+}
+
+html.dark [class*="text-indigo-700"],
+html.dark [class*="text-indigo-600"] {
+  color: #818cf8 !important;
+}
+
+html.dark [class*="text-purple-700"],
+html.dark [class*="text-purple-600"] {
+  color: #c084fc !important;
+}
+
+html.dark [class*="text-emerald-700"],
+html.dark [class*="text-emerald-600"] {
+  color: #34d399 !important;
+}
+
+html.dark .text-white,
+html.dark [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Borders in dark mode */
+html.dark [class*="border-slate-"],
+html.dark [class*="border-gray-"] {
+  border-color: #1e293b !important;
+}
+
+html.dark [class*="border-blue-100"],
+html.dark [class*="border-blue-200"],
+html.dark [class*="border-indigo-100"],
+html.dark [class*="border-indigo-200"] {
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Shadows */
+html.dark [class*="shadow-"] {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Background Grids & Patterns in dark mode */
+html.dark .bg-grid-pattern,
+html.dark [class*="bg-grid"] {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
+}
+
+html.dark .bg-dot-pattern,
+html.dark [class*="bg-dot"] {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px) !important;
+}
+
+html.dark .tech-grid-light {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
+}
+
+
