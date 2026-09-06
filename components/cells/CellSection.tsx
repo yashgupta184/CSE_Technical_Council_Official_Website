@@ -3,8 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CldImage } from "next-cloudinary";
 import { CellInfo, TeamMember, CoordinatorMember } from "@/data/team";
+import { getImageUrl } from "@/lib/image-utils";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { QuoteIcon, LinkedInIcon, MailIcon, InstagramIcon, GithubIcon, ArrowRight } from "@/components/Icons";
 
@@ -24,6 +24,7 @@ export function CellSection({
   isAlternate = false,
 }: CellSectionProps) {
   const anchorId = cell.id.toLowerCase();
+  const coordinatorImageUrl = getImageUrl(studentCoordinator?.image);
 
   return (
     <section
@@ -130,24 +131,13 @@ export function CellSection({
               {/* Coordinator Avatar / Monogram */}
               <div className="md:col-span-4 flex flex-col items-center justify-center text-center">
                 <div className="relative aspect-square w-36 overflow-hidden rounded-2xl bg-gradient-to-b from-slate-100 to-slate-200 border border-slate-200 shadow-sm dark:from-slate-800 dark:to-slate-900 dark:border-slate-700">
-                  {studentCoordinator.image && !studentCoordinator.image.includes("placeholder") ? (
-                    studentCoordinator.image.startsWith("http") || studentCoordinator.image.startsWith("/") ? (
-                      <Image
-                        src={studentCoordinator.image}
-                        alt={studentCoordinator.name}
-                        fill
-                        className="object-cover object-center"
-                      />
-                    ) : (
-                      <CldImage
-                        src={studentCoordinator.image}
-                        alt={studentCoordinator.name}
-                        fill
-                        crop="fill"
-                        gravity="auto"
-                        className="object-cover object-center"
-                      />
-                    )
+                  {coordinatorImageUrl ? (
+                    <Image
+                      src={coordinatorImageUrl}
+                      alt={studentCoordinator.name}
+                      fill
+                      className="object-cover object-center"
+                    />
                   ) : (
                     <>
                       <div className="absolute inset-0 bg-dot-pattern opacity-60" />
