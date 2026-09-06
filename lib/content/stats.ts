@@ -1,9 +1,7 @@
 export const quickStats = [
   { label: "Cells", value: "3" },
-  { label: "Members", value: "TBD" }, // TODO: Confirm numbers
-  { label: "Events", value: "TBD" }, // TODO: Confirm numbers
-  { label: "Initiatives", value: "TBD" }, // TODO: Confirm numbers
-  { label: "Achievements", value: "TBD" }, // TODO: Confirm numbers
+  { label: "Members", value: "25+" },
+  { label: "Events", value: "10+" },
 ];
 
 export const impactStats = [
