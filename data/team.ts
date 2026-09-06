@@ -146,7 +146,7 @@ export const facultyCoordinators: CoordinatorMember[] = [
     cell: "AIC",
     institution: "JSS University, Noida",
     quote: "Guiding students to bridge theoretical algorithms with scalable real-world innovation.",
-    image: "/images/team/placeholder-faculty-aic.jpg",
+    image: "sur-singh-rawat",
     socials: {
       linkedin: "#",
       email: "#",
@@ -155,12 +155,12 @@ export const facultyCoordinators: CoordinatorMember[] = [
   },
   {
     id: "fac-rac",
-    name: "Faculty Coordinator Name",
+    name: "Ms. Attiuttama",
     role: "Faculty Coordinator",
     cell: "RAC",
     institution: "JSS University, Noida",
     quote: "Cultivating research mindset and scientific inquiry across modern computing paradigms.",
-    image: "/images/team/placeholder-faculty-rac.jpg",
+    image: "attiuttma",
     socials: {
       linkedin: "#",
       email: "#",
@@ -174,7 +174,7 @@ export const facultyCoordinators: CoordinatorMember[] = [
     cell: "CPC",
     institution: "JSS University, Noida",
     quote: "Sharpening mathematical rigor, algorithmic intuition, and contest readiness.",
-    image: "/images/team/placeholder-faculty-cpc.jpg",
+    image: "vinooth-prakash",
     socials: {
       linkedin: "#",
       email: "#",
