@@ -35,12 +35,16 @@ export type HeroImage = {
 export const heroMedia: {
   video: HeroVideo | null;
   image: HeroImage | null;
-  /** Caption shown under the empty frame while media is pending. */
   placeholderLabel: string;
 } = {
-  // TODO: replace with the official council reel once supplied.
+  // Replace with official council reel when ready
   video: null,
-  // TODO: or replace with an official council photograph.
-  image: null,
-  placeholderLabel: "Council photo or reel to be added",
+  // Official CSE Technical Council seal/logo
+  image: {
+    src: "/hero-logo.png",
+    alt: "CSE Technical Council Official Emblem - JSS University, Noida",
+    width: 1024,
+    height: 1024,
+  },
+  placeholderLabel: "Official Council Seal",
 };
