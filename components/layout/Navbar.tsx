@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig, navItems } from "@/lib/content/site-config";
@@ -10,6 +10,20 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/85">
@@ -29,33 +43,54 @@ export function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-5">
           {navItems.map((item, i) => (
-            <div key={i} className="relative group">
+            <div key={i} className="relative">
               {item.items ? (
                 <div
-                  className="flex items-center gap-1 cursor-pointer text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1 dark:text-slate-300 dark:hover:text-blue-400"
+                  ref={dropdownRef}
+                  className="relative py-2"
                   onMouseEnter={() => setDropdownOpen(true)}
                   onMouseLeave={() => setDropdownOpen(false)}
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  onKeyDown={(e) => e.key === "Enter" && setDropdownOpen(!dropdownOpen)}
-                  tabIndex={0}
-                  role="button"
-                  aria-expanded={dropdownOpen}
                 >
-                  {item.title} <ChevronDown className="h-4 w-4 text-slate-400 group-hover:text-blue-600 transition-transform dark:text-slate-500 dark:group-hover:text-blue-400" />
-                  
-                  {/* Dropdown */}
+                  <div className="flex items-center gap-1">
+                    <Link
+                      href={item.href}
+                      className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors dark:text-slate-300 dark:hover:text-blue-400"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setDropdownOpen((prev) => !prev)}
+                      className="p-1 text-slate-400 hover:text-blue-600 transition-colors dark:text-slate-500 dark:hover:text-blue-400"
+                      aria-label="Toggle dropdown"
+                      aria-expanded={dropdownOpen}
+                    >
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          dropdownOpen
+                            ? "rotate-180 text-blue-600 dark:text-blue-400"
+                            : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
+
+                  {/* Dropdown Menu with continuous hover bridge */}
                   {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-48 rounded-xl border border-slate-200 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900">
-                      {item.items.map((subItem, j) => (
-                        <Link
-                          key={j}
-                          href={subItem.href}
-                          className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-blue-400"
-                          onClick={() => setDropdownOpen(false)}
-                        >
-                          {subItem.title}
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-0 pt-1 z-50 w-56">
+                      <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-xl ring-1 ring-slate-900/5 dark:border-slate-800 dark:bg-slate-900 dark:ring-white/10">
+                        {item.items.map((subItem, j) => (
+                          <Link
+                            key={j}
+                            href={subItem.href}
+                            className="flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+                            onClick={() => setDropdownOpen(false)}
+                          >
+                            <span>{subItem.title}</span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
