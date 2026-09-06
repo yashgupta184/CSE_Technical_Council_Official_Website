@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CldImage } from "next-cloudinary";
 import { TeamMember } from "@/data/team";
 import { LinkedInIcon, InstagramIcon, MailIcon, GithubIcon, ArrowUpRight, ArrowRight } from "./Icons";
 
@@ -71,25 +70,13 @@ export function TeamMemberCard({
       {/* Image container with 100xSchool rounded border */}
       <div className="relative my-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-100 border border-slate-200/70 dark:bg-slate-800 dark:border-slate-700/80">
         {image && !image.includes("placeholder") ? (
-          image.startsWith("http") || image.startsWith("/") ? (
-            <Image
-              src={image}
-              alt={name}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-            />
-          ) : (
-            <CldImage
-              src={image}
-              alt={name}
-              fill
-              crop="fill"
-              gravity="auto"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-            />
-          )
+          <Image
+            src={image}
+            alt={name}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          />
         ) : (
           /* Sleek 100xSchool style Monogram Graphic */
           <div className="relative flex h-full w-full flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100 p-6 text-center select-none dark:from-slate-800 dark:to-slate-900">

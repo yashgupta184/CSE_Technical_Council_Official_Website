@@ -43,6 +43,157 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ========================================================================== */
+/* CUSTOM SCROLLBAR                                                           */
+/* ========================================================================== */
+/* Firefox / spec-compliant browsers. Kept slim with a brand-tinted thumb;
+   the track stays close to the page background so it reads as part of the
+   surface rather than a chrome element. */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #93c5fd var(--surface-muted);
+}
+
+html.dark {
+  scrollbar-color: #334155 #0b1220;
+}
+
+/* WebKit / Blink. */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, #93c5fd 0%, #60a5fa 100%);
+  /* Inset border keeps a gap between thumb and track edges. */
+  border: 3px solid transparent;
+  background-clip: content-box;
+  transition: background 160ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+  background-clip: content-box;
+}
+
+/* Where both axes meet — leave it flat instead of the default OS artefact. */
+::-webkit-scrollbar-corner {
+  background: var(--surface-muted);
+}
+
+html.dark ::-webkit-scrollbar-track,
+html.dark ::-webkit-scrollbar-corner {
+  background: #0b1220;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  background-clip: content-box;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #475569 0%, #334155 100%);
+  background-clip: content-box;
+}
+
+/* Opt-in slim variant for scrollable panels (filter rows, gallery strips)
+   where a full-width bar would crowd the content. */
+.scrollbar-slim::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-slim::-webkit-scrollbar-thumb {
+  border-width: 1px;
+}
+
+/* Desktop-only cursor enhancement with theme-aware contrast. */
+.custom-cursor-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.custom-cursor-core,
+.custom-cursor-halo,
+.custom-cursor-trail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 999px;
+  color: #0f172a;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+html.dark .custom-cursor-core,
+html.dark .custom-cursor-halo,
+html.dark .custom-cursor-trail {
+  color: #f8fafc;
+}
+
+.custom-cursor-core {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+  transition: width 160ms ease, height 160ms ease, margin 160ms ease;
+}
+
+.custom-cursor-halo {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid currentColor;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  filter: blur(1px);
+  transition: width 180ms ease, height 180ms ease, margin 180ms ease, opacity 180ms ease;
+}
+
+.custom-cursor-trail {
+  width: 7px;
+  height: 3px;
+  margin: -1.5px 0 0 -3.5px;
+  background: currentColor;
+  filter: blur(2px);
+}
+
+html.custom-cursor-enabled,
+html.custom-cursor-enabled * {
+  cursor: none !important;
+}
+
+html.custom-cursor-enabled .custom-cursor-core,
+html.custom-cursor-enabled .custom-cursor-halo {
+  opacity: 1;
+}
+
+html.custom-cursor-hover .custom-cursor-core {
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+}
+
+html.custom-cursor-hover .custom-cursor-halo {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
