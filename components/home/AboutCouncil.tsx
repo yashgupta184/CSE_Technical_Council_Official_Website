@@ -25,7 +25,7 @@ export function AboutCouncil() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">About the Council</h2>
           <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
-            The CSE Technical Council is the official technical innovation club of the Department of Computer Science & Engineering and Allied Branches at JSS University, Noida. It helps students explore emerging technologies beyond the classroom, develop practical skills, and transform ideas into meaningful solutions.
+            The CSE Technical Council is the official technical innovation club of the Department of CSE and Allied Branches at JSS University, Noida. It helps students explore emerging technologies beyond the classroom, develop practical skills, and transform ideas into meaningful solutions.
           </p>
         </div>
 

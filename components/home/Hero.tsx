@@ -22,15 +22,15 @@ export function Hero() {
           <div className="mb-8 flex justify-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-4 py-1.5 text-xs sm:text-sm font-medium text-slate-700 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              Department of Computer Science & Engineering and Allied Branches
+              Department of CSE and Allied Branches
             </span>
           </div>
           
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+          <h1 className="font-sans text-5xl font-black leading-none tracking-tight text-slate-900 sm:text-7xl lg:text-8xl">
             CSE Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Council</span>
           </h1>
           
-          <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-normal leading-relaxed text-slate-600 sm:text-xl">
             A student‒faculty initiative at JSS University, Noida, building a collaborative ecosystem for hands-on learning, innovation, research, and real-world problem-solving.
           </p>
           

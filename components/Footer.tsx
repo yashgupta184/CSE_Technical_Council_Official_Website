@@ -18,7 +18,7 @@ export function Footer() {
               </span>
             </div>
             <p className="max-w-md text-xs leading-relaxed text-slate-500 font-medium">
-              Department of Computer Science & Engineering
+              Department of CSE and Allied Branches
               <br />
               JSS University, Noida (UP), India.
             </p>

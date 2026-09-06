@@ -32,7 +32,7 @@ export function EventHero({ event }: { event: CouncilEvent }) {
 
   const heading = (
     <h1
-      className={`mt-4 text-3xl leading-tight font-bold tracking-tight sm:text-4xl md:text-5xl ${
+      className={`mt-4 font-sans text-5xl leading-none font-black tracking-tight sm:text-7xl lg:text-8xl ${
         hasImage ? "text-white" : "text-gray-900"
       }`}
     >

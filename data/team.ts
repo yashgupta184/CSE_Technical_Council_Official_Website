@@ -67,7 +67,7 @@ export const councilCoordinator = {
   role: "Coordinator",
   council: "CSE Technical Council",
   institution: "JSS University, Noida",
-  department: "Department of Computer Science & Engineering",
+  department: "Department of CSE and Allied Branches",
   vision: "Council vision statement will be added here.",
   image: "/images/team/dhiraj-pandey.jpg",
   quote: "Empowering the next generation of engineers to transcend code and build foundational technical leadership.",
