@@ -43,6 +43,82 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Desktop-only cursor enhancement with theme-aware contrast. */
+.custom-cursor-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.custom-cursor-core,
+.custom-cursor-halo,
+.custom-cursor-trail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 999px;
+  color: #0f172a;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+html.dark .custom-cursor-core,
+html.dark .custom-cursor-halo,
+html.dark .custom-cursor-trail {
+  color: #f8fafc;
+}
+
+.custom-cursor-core {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+  transition: width 160ms ease, height 160ms ease, margin 160ms ease;
+}
+
+.custom-cursor-halo {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid currentColor;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  filter: blur(1px);
+  transition: width 180ms ease, height 180ms ease, margin 180ms ease, opacity 180ms ease;
+}
+
+.custom-cursor-trail {
+  width: 7px;
+  height: 3px;
+  margin: -1.5px 0 0 -3.5px;
+  background: currentColor;
+  filter: blur(2px);
+}
+
+html.custom-cursor-enabled,
+html.custom-cursor-enabled * {
+  cursor: none !important;
+}
+
+html.custom-cursor-enabled .custom-cursor-core,
+html.custom-cursor-enabled .custom-cursor-halo {
+  opacity: 1;
+}
+
+html.custom-cursor-hover .custom-cursor-core {
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+}
+
+html.custom-cursor-hover .custom-cursor-halo {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
