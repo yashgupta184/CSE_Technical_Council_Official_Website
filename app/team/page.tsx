@@ -1,6 +1,8 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
+import { getImageUrl } from "@/lib/image-utils";
 import {
   ArrowRight,
   LinkedInIcon,
@@ -15,6 +17,8 @@ import {
 } from "@/data/team";
 
 export default function TeamPage() {
+  const councilImageUrl = getImageUrl(councilCoordinator.image);
+
   return (
     <div className="flex min-h-screen flex-col bg-[#F8FAFC] text-slate-900 selection:bg-blue-600 selection:text-white dark:bg-[#090d16] dark:text-slate-100">
       <main className="flex-1">
@@ -90,18 +94,29 @@ export default function TeamPage() {
               <div className="lg:col-span-5">
                 <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-lg shadow-slate-200/50 dark:border-slate-800 dark:bg-slate-900/90">
                   <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-slate-100 to-slate-200 border border-slate-200/60 dark:from-slate-800 dark:to-slate-900 dark:border-slate-700">
-                    <div className="absolute inset-0 bg-dot-pattern opacity-60" />
-                    <div className="flex h-full w-full flex-col items-center justify-center p-8 text-center">
-                      <div className="flex h-28 w-28 items-center justify-center rounded-3xl border border-slate-300 bg-white font-sans text-4xl font-black text-slate-900 shadow-md shadow-blue-500/5 transition-transform duration-500 group-hover:scale-105 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
-                        DP
-                      </div>
-                      <div className="mt-5 font-sans text-sm font-bold text-slate-800 dark:text-slate-200">
-                        {councilCoordinator.name}
-                      </div>
-                      <div className="mt-1 font-mono text-xs font-medium text-blue-600 dark:text-blue-400">
-                        {councilCoordinator.role} &bull; {councilCoordinator.council}
-                      </div>
-                    </div>
+                    {councilImageUrl ? (
+                      <Image
+                        src={councilImageUrl}
+                        alt={councilCoordinator.name}
+                        fill
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-dot-pattern opacity-60" />
+                        <div className="flex h-full w-full flex-col items-center justify-center p-8 text-center">
+                          <div className="flex h-28 w-28 items-center justify-center rounded-3xl border border-slate-300 bg-white font-sans text-4xl font-black text-slate-900 shadow-md shadow-blue-500/5 transition-transform duration-500 group-hover:scale-105 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
+                            DP
+                          </div>
+                          <div className="mt-5 font-sans text-sm font-bold text-slate-800 dark:text-slate-200">
+                            {councilCoordinator.name}
+                          </div>
+                          <div className="mt-1 font-mono text-xs font-medium text-blue-600 dark:text-blue-400">
+                            {councilCoordinator.role} &bull; {councilCoordinator.council}
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -181,70 +196,83 @@ export default function TeamPage() {
 
             {/* 3 Faculty Profiles */}
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {facultyCoordinators.map((faculty) => (
-                <div
-                  key={faculty.id}
-                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/50 p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white hover:shadow-xl hover:shadow-slate-200/60 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-slate-700 dark:hover:bg-slate-900"
-                >
-                  <div>
-                    {/* Cell Tag */}
-                    <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 font-mono text-xs dark:border-slate-800">
-                      <span className="font-bold text-slate-900 dark:text-white">
-                        FACULTY {"//"} {faculty.cell}
-                      </span>
-                      <span className="text-slate-400 font-medium dark:text-slate-500">JSS UNIVERSITY</span>
-                    </div>
-
-                    {/* Placeholder portrait */}
-                    <div className="relative my-6 aspect-[4/5] w-full overflow-hidden rounded-xl bg-white border border-slate-200/80 shadow-xs dark:border-slate-700 dark:bg-slate-800">
-                      <div className="flex h-full w-full flex-col items-center justify-center p-6 text-center">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 font-sans text-lg font-black text-slate-800 border border-slate-200 group-hover:scale-105 transition-transform dark:bg-slate-700 dark:text-white dark:border-slate-600">
-                          {faculty.cell}
-                        </div>
-                        <span className="mt-3 font-mono text-[10px] font-bold tracking-wider text-slate-400 uppercase">
-                          {"//"} {faculty.cell} FACULTY LEAD
+              {facultyCoordinators.map((faculty) => {
+                const facultyImageUrl = getImageUrl(faculty.image);
+                return (
+                  <div
+                    key={faculty.id}
+                    className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/50 p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white hover:shadow-xl hover:shadow-slate-200/60 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-slate-700 dark:hover:bg-slate-900"
+                  >
+                    <div>
+                      {/* Cell Tag */}
+                      <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 font-mono text-xs dark:border-slate-800">
+                        <span className="font-bold text-slate-900 dark:text-white">
+                          FACULTY {"//"} {faculty.cell}
                         </span>
+                        <span className="text-slate-400 font-medium dark:text-slate-500">JSS UNIVERSITY</span>
                       </div>
+
+                      {/* Portrait */}
+                      <div className="relative my-6 aspect-[4/5] w-full overflow-hidden rounded-xl bg-white border border-slate-200/80 shadow-xs dark:border-slate-700 dark:bg-slate-800">
+                        {facultyImageUrl ? (
+                          <Image
+                            src={facultyImageUrl}
+                            alt={faculty.name}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                            className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                        ) : (
+                          <div className="flex h-full w-full flex-col items-center justify-center p-6 text-center">
+                            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 font-sans text-lg font-black text-slate-800 border border-slate-200 group-hover:scale-105 transition-transform dark:bg-slate-700 dark:text-white dark:border-slate-600">
+                              {faculty.cell}
+                            </div>
+                            <span className="mt-3 font-mono text-[10px] font-bold tracking-wider text-slate-400 uppercase">
+                              {"//"} {faculty.cell} FACULTY LEAD
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Name & Title */}
+                      <h3 className="font-sans text-xl font-bold tracking-tight text-slate-950 dark:text-white">
+                        {faculty.name}
+                      </h3>
+                      <p className="font-sans text-xs font-semibold text-blue-600 mt-1 dark:text-blue-400">
+                        {faculty.role} &bull; {faculty.cell} Cell
+                      </p>
+
+                      {/* Quote */}
+                      <p className="mt-4 text-xs italic leading-relaxed text-slate-600 border-l-2 border-blue-400 pl-3 dark:text-slate-300">
+                        &ldquo;{faculty.quote}&rdquo;
+                      </p>
                     </div>
 
-                    {/* Name & Title */}
-                    <h3 className="font-sans text-xl font-bold tracking-tight text-slate-950 dark:text-white">
-                      {faculty.name}
-                    </h3>
-                    <p className="font-sans text-xs font-semibold text-blue-600 mt-1 dark:text-blue-400">
-                      {faculty.role} &bull; {faculty.cell} Cell
-                    </p>
-
-                    {/* Quote */}
-                    <p className="mt-4 text-xs italic leading-relaxed text-slate-600 border-l-2 border-blue-400 pl-3 dark:text-slate-300">
-                      &ldquo;{faculty.quote}&rdquo;
-                    </p>
-                  </div>
-
-                  {/* Social links */}
-                  <div className="mt-6 pt-4 border-t border-slate-200/80 flex items-center justify-between dark:border-slate-800">
-                    <div className="flex items-center gap-2">
-                      <a
-                        href={faculty.socials.linkedin}
-                        aria-label="Faculty LinkedIn"
-                        className="rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-slate-800 dark:hover:text-blue-400"
-                      >
-                        <LinkedInIcon className="h-4 w-4" />
-                      </a>
-                      <a
-                        href={faculty.socials.email}
-                        aria-label="Faculty Email"
-                        className="rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-slate-800 dark:hover:text-blue-400"
-                      >
-                        <MailIcon className="h-4 w-4" />
-                      </a>
+                    {/* Social links */}
+                    <div className="mt-6 pt-4 border-t border-slate-200/80 flex items-center justify-between dark:border-slate-800">
+                      <div className="flex items-center gap-2">
+                        <a
+                          href={faculty.socials.linkedin}
+                          aria-label="Faculty LinkedIn"
+                          className="rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+                        >
+                          <LinkedInIcon className="h-4 w-4" />
+                        </a>
+                        <a
+                          href={faculty.socials.email}
+                          aria-label="Faculty Email"
+                          className="rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-blue-50 hover:text-blue-600 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+                        >
+                          <MailIcon className="h-4 w-4" />
+                        </a>
+                      </div>
+                      <span className="font-mono text-[10px] font-bold text-slate-400 uppercase">
+                        FACULTY ADVISOR
+                      </span>
                     </div>
-                    <span className="font-mono text-[10px] font-bold text-slate-400 uppercase">
-                      FACULTY ADVISOR
-                    </span>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { TeamMember } from "@/data/team";
+import { getImageUrl } from "@/lib/image-utils";
 import { LinkedInIcon, InstagramIcon, MailIcon, GithubIcon, ArrowUpRight, ArrowRight } from "./Icons";
 
 interface TeamMemberCardProps {
@@ -20,6 +21,7 @@ export function TeamMemberCard({
   cellActionLabel,
 }: TeamMemberCardProps) {
   const { name, role, cell, quote, image, socials } = member;
+  const imageUrl = getImageUrl(image);
 
   const cellBadgeColors: Record<string, { badge: string; pill: string; border: string }> = {
     AIC: {
@@ -69,9 +71,9 @@ export function TeamMemberCard({
 
       {/* Image container with 100xSchool rounded border */}
       <div className="relative my-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-100 border border-slate-200/70 dark:bg-slate-800 dark:border-slate-700/80">
-        {image && !image.includes("placeholder") ? (
+        {imageUrl ? (
           <Image
-            src={image}
+            src={imageUrl}
             alt={name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"

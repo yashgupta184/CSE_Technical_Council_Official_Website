@@ -146,7 +146,7 @@ export const facultyCoordinators: CoordinatorMember[] = [
     cell: "AIC",
     institution: "JSS University, Noida",
     quote: "Guiding students to bridge theoretical algorithms with scalable real-world innovation.",
-    image: "/images/team/placeholder-faculty-aic.jpg",
+    image: "sur-singh-rawat",
     socials: {
       linkedin: "#",
       email: "#",
@@ -155,12 +155,12 @@ export const facultyCoordinators: CoordinatorMember[] = [
   },
   {
     id: "fac-rac",
-    name: "Faculty Coordinator Name",
+    name: "Ms. Attiuttama",
     role: "Faculty Coordinator",
     cell: "RAC",
     institution: "JSS University, Noida",
     quote: "Cultivating research mindset and scientific inquiry across modern computing paradigms.",
-    image: "/images/team/placeholder-faculty-rac.jpg",
+    image: "attiuttma",
     socials: {
       linkedin: "#",
       email: "#",
@@ -174,7 +174,7 @@ export const facultyCoordinators: CoordinatorMember[] = [
     cell: "CPC",
     institution: "JSS University, Noida",
     quote: "Sharpening mathematical rigor, algorithmic intuition, and contest readiness.",
-    image: "/images/team/placeholder-faculty-cpc.jpg",
+    image: "vinooth-prakash",
     socials: {
       linkedin: "#",
       email: "#",
@@ -190,7 +190,7 @@ export const studentCoordinators: CoordinatorMember[] = [
     role: "Lead Coordinator",
     cell: "AIC",
     quote: "Driving builder sprints, hands-on hackathons, and technical incubations for the department.",
-    image: "/images/team/placeholder-student-aic.jpg",
+    image: "yash-gupta",
     socials: {
       linkedin: "https://www.linkedin.com/in/yash-gupta18/",
       github: "https://github.com/yashgupta184",
@@ -202,11 +202,12 @@ export const studentCoordinators: CoordinatorMember[] = [
     name: "Utkarsh Srivastava",
     role: "Lead Coordinator",
     cell: "RAC",
-    quote: "Organizing reading groups, research methodologies, and collaborative paper writing pipelines.",
-    image: "/images/team/placeholder-student-rac.jpg",
+    quote:
+      "I like asking 'what if?' almost as much as I like figuring out 'how do we build it?' Here's to more experiments, more ideas, and hopefully a few things that actually work.",
+    image: "utkarsh-srivastava",
     socials: {
       linkedin: "https://www.linkedin.com/in/utkarshsri1139/",
-      github: "#",
+      github: "https://github.com/utkarshsrivastava1139",
       instagram: "https://www.instagram.com/utkarshsri1139/",
     },
   },
@@ -215,31 +216,31 @@ export const studentCoordinators: CoordinatorMember[] = [
     name: "Ujjwal Kaushik",
     role: "Lead Coordinator",
     cell: "CPC",
-    quote: "Leading weekly editorial walkthroughs, ladder contests, and algorithmic problem sets.",
-    image: "/images/team/placeholder-student-cpc.jpg",
+    quote:
+      "Those who are truly familiar with reality and its nature have nothing wrong with ignoring it, because they know it will never be able to defeat them.",
+    image: "ujjwal-kaushik",
     socials: {
       linkedin: "https://www.linkedin.com/in/kaushikujjwal/",
-      github: "#",
-      instagram: "https://instagram.com/ujjwal_insane",
+      github: "https://github.com/Ujjwal-Qubit",
+      instagram: "https://www.instagram.com/ujjwal_insane/",
     },
   },
 ];
 
 export const completeTeamMembers: TeamMember[] = [
   // =========================================================================
-  // AI INNOVATION CELL (AIC) - 9 Members
+  // AI INNOVATION CELL (AIC)
   // =========================================================================
   {
     id: "tm-aic-1",
-    name: "Team Member Name",
-    role: "UI/UX & Design Engineer",
+    name: "Navya Gupta",
+    role: "Core Team Member",
     cell: "AIC",
-    quote: "Crafting modern editorial user interfaces and responsive web experiences.",
-    image: "/images/team/placeholder-team-aic-1.jpg",
+    quote: "You never lose, you either win or learn",
+    image: "navya-gupta",
     socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/navya-gupta14",
+      github: "https://github.com/SyntaxSphinx",
     },
   },
   {
@@ -348,32 +349,30 @@ export const completeTeamMembers: TeamMember[] = [
   },
 
   // =========================================================================
-  // RESEARCH ACTIVITY CELL (RAC) - 5 Members
+  // RESEARCH ACTIVITY CELL (RAC)
   // =========================================================================
   {
     id: "tm-rac-1",
-    name: "Team Member Name",
-    role: "Research Associate",
+    name: "Mohd Sahal Parvez",
+    role: "Core Team Member",
     cell: "RAC",
-    quote: "Investigating generative architectures and verifiable machine learning workloads.",
-    image: "/images/team/placeholder-team-rac-1.jpg",
+    quote: "The Social Network (Timestamp: 1:51:06)",
+    image: "mohd-sahal-parvez",
     socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/sehal-pervez",
     },
   },
   {
     id: "tm-rac-2",
-    name: "Team Member Name",
-    role: "Research Fellow",
+    name: "Krish Singh",
+    role: "Core Team Member",
     cell: "RAC",
-    quote: "Focusing on systems security, cryptography, and network telemetry benchmarks.",
-    image: "/images/team/placeholder-team-rac-2.jpg",
+    quote: "I'm not chasing perfection. I'm building someone I'll be proud of.",
+    image: "krish-singh",
     socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/krish-singh-090071307",
+      github: "https://github.com/KRISH2006-IIT",
+      instagram: "https://www.instagram.com/krishsingh__",
     },
   },
   {
@@ -417,7 +416,7 @@ export const completeTeamMembers: TeamMember[] = [
   },
 
   // =========================================================================
-  // COMPETITIVE PROGRAMMING CELL (CPC) - 4 Members
+  // COMPETITIVE PROGRAMMING CELL (CPC)
   // =========================================================================
   {
     id: "tm-cpc-1",
@@ -427,9 +426,9 @@ export const completeTeamMembers: TeamMember[] = [
     quote: "Face the fear till you get over from it",
     image: "alok-pal",
     socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/alok-pal08",
+      github: "https://github.com/alokpal17",
+      instagram: "https://www.instagram.com/itz_alokpal",
     },
   },
   {
@@ -437,34 +436,34 @@ export const completeTeamMembers: TeamMember[] = [
     name: "Kartik Gupta",
     role: "Problem Setter",
     cell: "CPC",
-    quote: "Curating problem testcases, mathematical proofs, and rating-based contests.",
-    image: "/images/team/placeholder-team-cpc-2.jpg",
+    quote: "Let me fall if I must the person I am becoming will catch me",
+    image: "kartik-gupta",
     socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/kartik-gupta-tech/",
+      github: "https://github.com/kartikgupta372",
+      instagram: "https://www.instagram.com/13guptakartik/",
     },
   },
   {
     id: "tm-cpc-3",
-    name: "Team Member Name",
-    role: "Algorithms Trainer",
+    name: "Luv Mangla",
+    role: "Competitive Programmer",
     cell: "CPC",
-    quote: "Breaking down complex graph theory and dynamic programming techniques for juniors.",
-    image: "/images/team/placeholder-team-cpc-3.jpg",
+    quote: "Somewhere between deadlines, dreams, and late night ideas - I found myself.",
+    image: "luv-mangla",
     socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/luv-mangla/",
+      github: "https://github.com/luvmangla05/",
+      instagram: "https://www.instagram.com/luvmangla_05/",
     },
   },
   {
     id: "tm-cpc-4",
-    name: "Team Member Name",
+    name: "Anshul Kanswal",
     role: "Contest Platform Coordinator",
     cell: "CPC",
     quote: "Managing leaderboard systems, editorial walkthroughs, and weekly coding ladders.",
-    image: "/images/team/placeholder-team-cpc-4.jpg",
+    image: "anshul-kanswal",
     socials: {
       linkedin: "#",
       github: "#",
