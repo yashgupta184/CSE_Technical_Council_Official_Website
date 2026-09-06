@@ -15,13 +15,15 @@ export function Footer() {
               href="/"
               className="flex items-center gap-3 font-sans text-base font-black tracking-tight text-slate-900 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
             >
-              <Image
-                src={siteConfig.logo}
-                alt={`${siteConfig.name} logo`}
-                width={36}
-                height={36}
-                className="h-9 w-9 rounded-xl object-contain shadow-xs border border-slate-200/80 bg-white p-0.5 dark:border-slate-800 dark:bg-slate-900"
-              />
+              <div className="relative h-9 w-9 overflow-hidden rounded-full ring-1 ring-slate-200/90 dark:ring-slate-800 shadow-xs flex-shrink-0 bg-white dark:bg-slate-900">
+                <Image
+                  src={siteConfig.logo}
+                  alt={`${siteConfig.name} logo`}
+                  width={36}
+                  height={36}
+                  className="h-full w-full object-cover scale-[1.05]"
+                />
+              </div>
               <span className="text-lg font-bold">{siteConfig.name}</span>
             </Link>
             <p className="max-w-md text-xs font-medium leading-relaxed text-slate-500 dark:text-slate-400">
