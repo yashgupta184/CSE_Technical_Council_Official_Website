@@ -28,15 +28,17 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/85">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="font-bold text-lg tracking-tight text-slate-900 hover:text-blue-600 transition-colors flex items-center gap-2.5 group dark:text-white dark:hover:text-blue-400">
-          <Image
-            src={siteConfig.logo}
-            alt={`${siteConfig.name} logo`}
-            width={32}
-            height={32}
-            className="h-8 w-8 rounded-lg object-contain transition-transform group-hover:scale-105"
-            priority
-          />
+        <Link href="/" className="font-bold text-lg tracking-tight text-slate-900 hover:text-blue-600 transition-colors flex items-center gap-3 group dark:text-white dark:hover:text-blue-400">
+          <div className="relative h-9 w-9 overflow-hidden rounded-full ring-1 ring-slate-200/90 dark:ring-slate-700/80 shadow-xs flex-shrink-0 bg-white dark:bg-slate-900">
+            <Image
+              src={siteConfig.logo}
+              alt={`${siteConfig.name} logo`}
+              width={36}
+              height={36}
+              className="h-full w-full object-cover scale-[1.05] transition-transform duration-300 group-hover:scale-110"
+              priority
+            />
+          </div>
           <span>{siteConfig.name}</span>
         </Link>
 
