@@ -16,11 +16,12 @@ export const navItems = [
   { title: "Events", href: "/events" },
   {
     title: "Cells",
-    href: "#", // Dummy for dropdown
+    href: "/cells",
     items: [
-      { title: "AIC", href: "/cells/aic" },
-      { title: "RAC", href: "/cells/rac" },
-      { title: "CPC", href: "/cells/cpc" },
+      { title: "All Cells", href: "/cells" },
+      { title: "AIC — Innovation", href: "/cells#aic" },
+      { title: "RAC — Research", href: "/cells#rac" },
+      { title: "CPC — Competitive Prog.", href: "/cells#cpc" },
     ],
   },
   { title: "Team", href: "/team" },
