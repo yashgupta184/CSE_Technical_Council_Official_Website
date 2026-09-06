@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "CSE Technical Council",
-  logo: "https://res.cloudinary.com/dh8cqlngr/image/upload/v1788639511/ChatGPT_Image_Sep_6_2026_01_47_36_AM_kns90i.png",
+  logo: "/logo.svg",
   description: "A student-faculty initiative at JSS University, Noida, building a collaborative ecosystem for hands-on learning, innovation, research, and real-world problem-solving.",
   url: "https://csetc.jssaten.ac.in", // TODO: Replace with actual domain
   links: {
