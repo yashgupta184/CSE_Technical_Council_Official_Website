@@ -5,7 +5,7 @@ import { ThreeCells } from "@/components/home/ThreeCells";
 import { FeaturedEvents } from "@/components/home/FeaturedEvents";
 import { ImpactAchievements } from "@/components/home/ImpactAchievements";
 import { MomentsGallery } from "@/components/home/MomentsGallery";
-import { TeamPreview } from "@/components/home/TeamPreview";
+import { CouncilQuotes } from "@/components/home/CouncilQuotes";
 import { JoinCouncilCTA } from "@/components/home/JoinCouncilCTA";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
       <FeaturedEvents />
       <ImpactAchievements />
       <MomentsGallery />
-      <TeamPreview />
+      <CouncilQuotes />
       <JoinCouncilCTA />
     </>
   );
