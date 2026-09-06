@@ -21,6 +21,8 @@ export function JoinCouncilCTA() {
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
               href={siteConfig.joinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 hover:bg-blue-700 dark:hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all flex items-center gap-2"
             >
               Join the Council <ArrowRight className="h-4 w-4" />

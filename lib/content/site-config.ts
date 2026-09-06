@@ -8,7 +8,7 @@ export const siteConfig = {
     linkedin: "#", // TODO: confirm handles
     email: "mailto:csetc@jssaten.ac.in", // TODO: confirm email
   },
-  joinUrl: process.env.NEXT_PUBLIC_JOIN_URL || "#", // TODO: wire to env var once verified
+  joinUrl: process.env.NEXT_PUBLIC_JOIN_URL || "https://events.ctcjssun.live",
 };
 
 export const navItems = [

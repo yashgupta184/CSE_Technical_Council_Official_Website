@@ -39,16 +39,14 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        {/* Official WhatsApp community link not yet supplied - CTA stays
-            disabled until it is. See WHATSAPP_INVITE_URL in data/events.ts. */}
-        <button
-          type="button"
-          disabled
-          title="Join link coming soon"
-          className="cursor-not-allowed rounded-full bg-indigo-600/50 px-4 py-2 text-sm font-semibold text-white"
+        <Link
+          href="https://events.ctcjssun.live"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-indigo-600 hover:bg-indigo-700 px-4 py-2 text-sm font-semibold text-white transition-colors"
         >
           Join Us
-        </button>
+        </Link>
       </div>
     </header>
   );

@@ -110,6 +110,8 @@ export function Navbar() {
 
           <Link
             href={siteConfig.joinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-xl bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-blue-500/20 transition-all"
           >
             Join Us
@@ -165,6 +167,8 @@ export function Navbar() {
           <div className="pt-2">
             <Link
               href={siteConfig.joinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block w-full text-center rounded-xl bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-blue-500/20 transition-colors"
               onClick={() => setIsOpen(false)}
             >
