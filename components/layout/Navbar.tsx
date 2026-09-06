@@ -5,15 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig, navItems } from "@/lib/content/site-config";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/85">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="font-bold text-lg tracking-tight text-slate-900 hover:text-blue-600 transition-colors flex items-center gap-2.5 group">
+        <Link href="/" className="font-bold text-lg tracking-tight text-slate-900 hover:text-blue-600 transition-colors flex items-center gap-2.5 group dark:text-white dark:hover:text-blue-400">
           <Image
             src={siteConfig.logo}
             alt={`${siteConfig.name} logo`}
@@ -26,12 +27,12 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-5">
           {navItems.map((item, i) => (
             <div key={i} className="relative group">
               {item.items ? (
                 <div
-                  className="flex items-center gap-1 cursor-pointer text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1"
+                  className="flex items-center gap-1 cursor-pointer text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors py-1 dark:text-slate-300 dark:hover:text-blue-400"
                   onMouseEnter={() => setDropdownOpen(true)}
                   onMouseLeave={() => setDropdownOpen(false)}
                   onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -40,16 +41,16 @@ export function Navbar() {
                   role="button"
                   aria-expanded={dropdownOpen}
                 >
-                  {item.title} <ChevronDown className="h-4 w-4 text-slate-400 group-hover:text-blue-600 transition-transform" />
+                  {item.title} <ChevronDown className="h-4 w-4 text-slate-400 group-hover:text-blue-600 transition-transform dark:text-slate-500 dark:group-hover:text-blue-400" />
                   
                   {/* Dropdown */}
                   {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-44 rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
+                    <div className="absolute top-full left-0 mt-2 w-48 rounded-xl border border-slate-200 bg-white p-2 shadow-xl dark:border-slate-800 dark:bg-slate-900">
                       {item.items.map((subItem, j) => (
                         <Link
                           key={j}
                           href={subItem.href}
-                          className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                          className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-blue-400"
                           onClick={() => setDropdownOpen(false)}
                         >
                           {subItem.title}
@@ -61,13 +62,17 @@ export function Navbar() {
               ) : (
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
+                  className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors dark:text-slate-300 dark:hover:text-blue-400"
                 >
                   {item.title}
                 </Link>
               )}
             </div>
           ))}
+
+          {/* Theme Toggle Button */}
+          <ThemeToggle />
+
           <Link
             href={siteConfig.joinUrl}
             className="rounded-xl bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-blue-500/20 transition-all"
@@ -76,31 +81,34 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile Nav Toggle */}
-        <button
-          className="md:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Mobile Right Controls */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            className="p-2 text-slate-600 hover:text-slate-900 transition-colors dark:text-slate-300 dark:hover:text-white"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-4">
+        <div className="md:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-4 dark:border-slate-800 dark:bg-slate-950">
           {navItems.map((item, i) => (
             <div key={i}>
               {item.items ? (
                 <div className="space-y-2">
-                  <div className="font-semibold text-slate-900">{item.title}</div>
-                  <div className="pl-4 space-y-2 border-l border-slate-200">
+                  <div className="font-semibold text-slate-900 dark:text-white">{item.title}</div>
+                  <div className="pl-4 space-y-2 border-l border-slate-200 dark:border-slate-800">
                     {item.items.map((subItem, j) => (
                       <Link
                         key={j}
                         href={subItem.href}
-                        className="block text-slate-600 hover:text-blue-600 transition-colors text-sm"
+                        className="block text-slate-600 hover:text-blue-600 transition-colors text-sm dark:text-slate-300 dark:hover:text-blue-400"
                         onClick={() => setIsOpen(false)}
                       >
                         {subItem.title}
@@ -111,7 +119,7 @@ export function Navbar() {
               ) : (
                 <Link
                   href={item.href}
-                  className="block font-medium text-slate-700 hover:text-blue-600 transition-colors"
+                  className="block font-medium text-slate-700 hover:text-blue-600 transition-colors dark:text-slate-200 dark:hover:text-blue-400"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.title}

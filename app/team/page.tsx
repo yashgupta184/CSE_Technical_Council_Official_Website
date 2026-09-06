@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import {
   ArrowRight,
@@ -29,9 +27,6 @@ export default function TeamPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#F8FAFC] text-slate-900 selection:bg-blue-600 selection:text-white">
-      {/* 100xSchool Floating Glass Navbar */}
-      <Navbar />
-
       <main className="flex-1">
         {/* ==================================================================== */}
         {/* SECTION 1: HERO */}
@@ -382,9 +377,6 @@ export default function TeamPage() {
           </div>
         </section>
       </main>
-
-      {/* 100xSchool Style Footer */}
-      <Footer />
     </div>
   );
 }
