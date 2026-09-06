@@ -64,11 +64,11 @@ export default function EventsPage() {
             Events &amp; Activities
           </span>
 
-          <h1 className="mt-5 max-w-4xl text-4xl leading-[1.1] font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+          <h1 className="mt-5 max-w-4xl font-sans text-5xl font-black leading-none tracking-tight text-gray-900 sm:text-7xl lg:text-8xl">
             Events That Nurture <span className="text-indigo-500">Thinkers</span>
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-lg font-normal leading-relaxed text-gray-600 sm:text-xl">
             The CSE Technical Council organizes workshops, bootcamps, contests,
             research sessions, and innovation activities across its three
             technical cells.

@@ -25,7 +25,7 @@ export function Footer() {
               <span className="text-lg font-bold">{siteConfig.name}</span>
             </Link>
             <p className="max-w-md text-xs font-medium leading-relaxed text-slate-500">
-              Department of Computer Science & Engineering &middot; JSS University, Noida (UP), India.
+              Department of CSE and Allied Branches &middot; JSS University, Noida (UP), India.
             </p>
             <div className="inline-flex flex-wrap items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[11px] text-slate-600">
               <span className="font-semibold text-blue-600">[COORD // DR. DHIRAJ PANDEY]</span>

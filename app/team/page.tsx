@@ -65,7 +65,7 @@ export default function TeamPage() {
               <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white/90 px-4 py-2 shadow-xs dark:border-slate-800 dark:bg-slate-900/90">
                 <span className="font-bold text-indigo-600 dark:text-indigo-400">JSS UNIVERSITY</span>
                 <span className="text-slate-300 dark:text-slate-700">|</span>
-                <span className="text-slate-600 dark:text-slate-300">Department of CSE</span>
+                <span className="text-slate-600 dark:text-slate-300">Department of CSE and Allied Branches</span>
               </div>
               <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white/90 px-4 py-2 shadow-xs dark:border-slate-800 dark:bg-slate-900/90">
                 <span className="font-bold text-emerald-600 dark:text-emerald-400">100% BUILDERS</span>
