@@ -1,8 +1,8 @@
 export const galleryImages = [
-  { src: "https://placehold.co/600x400/1e1b4b/fff?text=Moments+1", alt: "Event Placeholder 1" },
-  { src: "https://placehold.co/400x400/312e81/fff?text=Moments+2", alt: "Event Placeholder 2" },
-  { src: "https://placehold.co/600x800/1e3a8a/fff?text=Moments+3", alt: "Event Placeholder 3" },
-  { src: "https://placehold.co/400x600/172554/fff?text=Moments+4", alt: "Event Placeholder 4" },
-  { src: "https://placehold.co/800x400/1e1b4b/fff?text=Moments+5", alt: "Event Placeholder 5" },
-  { src: "https://placehold.co/400x400/312e81/fff?text=Moments+6", alt: "Event Placeholder 6" },
+  { src: "https://res.cloudinary.com/dh8cqlngr/image/upload/v1788724942/1_nyplph.jpg", alt: "" },
+  { src: "https://res.cloudinary.com/dh8cqlngr/image/upload/v1788724942/2_bivjrv.jpg", alt: "" },
+  { src: "https://res.cloudinary.com/dh8cqlngr/image/upload/v1788724942/3_mxbhxo.jpg", alt: "" },
+  { src: "https://res.cloudinary.com/dh8cqlngr/image/upload/v1788726521/WhatsApp_Image_2026-09-07_at_1.58.24_AM_jxvzes.jpg", alt: "" },
+  { src: "https://res.cloudinary.com/dh8cqlngr/image/upload/v1788724942/5_aqy4f1.jpg", alt: "" },
+  { src: "https://res.cloudinary.com/dh8cqlngr/image/upload/v1788724943/6_kw8bxx.jpg", alt: "" },
 ];

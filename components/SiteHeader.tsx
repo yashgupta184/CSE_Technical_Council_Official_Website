@@ -1,12 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /**
  * Minimal sticky header matching the site design language: wordmark left, nav
  * centred, filled CTA right. Height is 4rem (h-16) - the events filter bar
  * sticks at `top-16` to sit directly beneath it.
- *
- * No logo image is used yet; the wordmark is text. Swap in the official mark
- * when the asset is supplied.
  */
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -19,9 +17,21 @@ export function SiteHeader() {
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
-          className="text-sm font-bold tracking-tight text-gray-900 sm:text-base"
+          className="flex items-center gap-2.5 text-sm font-bold tracking-tight text-gray-900 sm:text-base group"
         >
-          CSE <span className="text-indigo-600">Technical Council</span>
+          <div className="relative h-8 w-8 overflow-hidden rounded-full ring-1 ring-slate-200 shadow-xs flex-shrink-0">
+            <Image
+              src="/hero-logo.png"
+              alt="CSE Technical Council Logo"
+              width={32}
+              height={32}
+              className="h-full w-full object-cover scale-[1.05]"
+              priority
+            />
+          </div>
+          <span>
+            CSE <span className="text-indigo-600">Technical Council</span>
+          </span>
         </Link>
 
         <nav aria-label="Main" className="hidden md:block">

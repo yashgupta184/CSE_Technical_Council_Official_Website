@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { MenuIcon, CloseIcon, TerminalIcon, ArrowUpRight } from "./Icons";
+import { MenuIcon, CloseIcon, ArrowUpRight } from "./Icons";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -20,8 +21,15 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-slate-200/90 bg-white/85 px-4 py-3 shadow-sm backdrop-blur-md transition-all sm:px-6">
         {/* Brand / Logo (100xSchool style: bold dark brand with vibrant blue badge) */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-500/20 transition-transform group-hover:scale-105">
-            <TerminalIcon className="h-4 w-4" />
+          <div className="relative h-9 w-9 overflow-hidden rounded-full ring-1 ring-slate-200/90 bg-white shadow-xs flex-shrink-0 transition-transform group-hover:scale-105">
+            <Image
+              src="/hero-logo.png"
+              alt="CSE Technical Council Logo"
+              width={36}
+              height={36}
+              className="h-full w-full object-cover scale-[1.05]"
+              priority
+            />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
