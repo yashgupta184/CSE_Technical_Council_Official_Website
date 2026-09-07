@@ -14,7 +14,7 @@ import { TerminalIcon, ArrowRight } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Cells & Domains | CSE Technical Council - JSS University, Noida",
   description:
-    "Explore the three specialized cells of CSE Technical Council: AI Innovation Cell (AIC), Research Activity Cell (RAC), and Competitive Programming Cell (CPC) — their visions, student leadership, and teams.",
+    "Explore the four specialized wings of CSE Technical Council: AI Innovation Cell (AIC), Competitive Programming Cell (CPC), Design & Creativity Team (DCT), and Research Activity Cell (RAC) — their visions, student leadership, and teams.",
 };
 
 export default function CellsPage() {
@@ -24,7 +24,7 @@ export default function CellsPage() {
         {/* Page Hero Header */}
         <CellsHero />
 
-        {/* 3 Dedicated Cell Sections */}
+        {/* 4 Dedicated Cell Sections in Alphabetical Order */}
         {cellsData.map((cell, index) => {
           const studentCoordinator = studentCoordinators.find(
             (sc) => sc.cell === cell.id
@@ -63,7 +63,7 @@ export default function CellsPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-              Whether you want to build cutting-edge AI systems in AIC, publish groundbreaking research papers in RAC, or dominate the contest leaderboards in CPC &mdash; there is a home for you in the Council.
+              Whether you want to build cutting-edge AI systems in AIC, dominate contest leaderboards in CPC, craft world-class UI/UX in DCT, or publish groundbreaking research papers in RAC &mdash; there is a place for you in the Council.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -71,7 +71,7 @@ export default function CellsPage() {
                 href="/events"
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 font-sans text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-700 hover:shadow-xl sm:w-auto"
               >
-                <span>Explore Cell Events</span>
+                <span>Explore Council Events</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

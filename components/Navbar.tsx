@@ -11,7 +11,7 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Three Cells", href: "/#cells" },
+    { label: "Cells & Teams", href: "/cells" },
     { label: "Team", href: "/team" },
   ];
 

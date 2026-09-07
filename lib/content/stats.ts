@@ -1,5 +1,5 @@
 export const quickStats = [
-  { label: "Cells", value: "3" },
+  { label: "Cells & Teams", value: "4" },
   { label: "Members", value: "25+" },
   { label: "Events", value: "10+" },
 ];

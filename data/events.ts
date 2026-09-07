@@ -16,7 +16,7 @@
  *    confirmation from the source document / council.
  */
 
-export type CellId = "AIC" | "CPC" | "RAC" | "Joint";
+export type CellId = "AIC" | "CPC" | "DCT" | "RAC" | "Joint";
 
 export type EventCategory =
   | "Workshop"
@@ -86,25 +86,29 @@ export const CELLS: Record<
   AIC: {
     id: "AIC",
     shortName: "AIC",
-    fullName: "Artificial Intelligence Cell",
-    facultyCoordinator: "[Faculty Coordinator name to be confirmed]",
+    fullName: "AI Innovation Cell",
+    facultyCoordinator: "Dr. Sur Singh Rawat",
     badgeClass: "bg-indigo-600 text-white",
   },
   CPC: {
     id: "CPC",
     shortName: "CPC",
     fullName: "Competitive Programming Cell",
-    // Two conflicting spellings exist in the source document
-    // ("Mr. Vinoth P" / "Mr. Vinooth Prakash") - left as a placeholder.
-    facultyCoordinator: "[To be confirmed]",
+    facultyCoordinator: "Mr. Vinooth Prakash",
     badgeClass: "bg-sky-600 text-white",
+  },
+  DCT: {
+    id: "DCT",
+    shortName: "DCT",
+    fullName: "Design & Creativity Team",
+    facultyCoordinator: "[To be confirmed]",
+    badgeClass: "bg-amber-600 text-white",
   },
   RAC: {
     id: "RAC",
     shortName: "RAC",
-    // TODO: confirm the official expansion of "RAC" with the council.
-    fullName: "[RAC - full cell name to be confirmed]",
-    facultyCoordinator: "[Faculty Coordinator name to be confirmed]",
+    fullName: "Research Activity Cell",
+    facultyCoordinator: "Ms. Attiuttama",
     badgeClass: "bg-violet-600 text-white",
   },
   Joint: {
@@ -120,7 +124,7 @@ export const CATEGORY_FILTERS: { label: string; value: EventCategory | "All" }[]
   [
     { label: "All", value: "All" },
     { label: "Workshops", value: "Workshop" },
-    { label: "Bootcamps", value: "Bootcamp" },
+    { label: "Bootcamp", value: "Bootcamp" },
     { label: "Competitions", value: "Competition" },
     { label: "Seminars", value: "Seminar" },
     { label: "Research", value: "Research" },
@@ -131,6 +135,7 @@ export const CELL_FILTERS: { label: string; value: CellId | "All" }[] = [
   { label: "All Cells", value: "All" },
   { label: "AIC", value: "AIC" },
   { label: "CPC", value: "CPC" },
+  { label: "DCT", value: "DCT" },
   { label: "RAC", value: "RAC" },
 ];
 

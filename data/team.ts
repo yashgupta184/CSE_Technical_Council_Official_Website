@@ -1,4 +1,4 @@
-export type CellType = "AIC" | "RAC" | "CPC" | "CORE";
+export type CellType = "AIC" | "CPC" | "DCT" | "RAC" | "CORE";
 
 export interface SocialLinks {
   linkedin?: string;
@@ -49,16 +49,17 @@ export const cellsData: CellInfo[] = [
     fullName: "AI Innovation Cell",
     title: "ARTIFICIAL INTELLIGENCE & INNOVATION",
     number: "01",
-    tagline: "Bridging foundational machine learning with real-world product engineering.",
+    tagline:
+      "Fostering practical exploration in Artificial Intelligence, Machine Learning, Generative AI, and Automation.",
     vision:
-      "To build a student-driven ecosystem where emerging AI paradigms, generative technologies, and system automation are rapidly converted into working, scalable prototypes and impactful solutions for industry and society.",
+      "Empower students to innovate and build practical AI solutions through projects, workshops, hackathons, and collaboration.",
     description:
-      "The AI Innovation Cell is dedicated to hands-on experimentation across Generative AI, Computer Vision, Natural Language Processing, and Autonomous Systems through sprints, hackathons, and product incubations.",
+      "The AI Innovation Cell fosters a culture of intelligent experimentation, hands-on learning, and practical innovation. It brings together students who are curious about Artificial Intelligence, Machine Learning, Generative AI, Automation, and the technologies shaping the future of software and digital systems.",
     focus: [
-      "Applied Generative AI & LLM Systems",
-      "Computer Vision & Edge Intelligence",
-      "Full-Stack Product Prototyping",
-      "Automation & Cloud Infrastructure",
+      "Artificial Intelligence & Machine Learning",
+      "Generative AI & LLM Systems",
+      "Automation & Autonomous Agents",
+      "Applied AI Solutions & Hackathons",
     ],
     route: "/cells/aic",
     color: {
@@ -70,47 +71,22 @@ export const cellsData: CellInfo[] = [
     },
   },
   {
-    id: "RAC",
-    name: "RAC",
-    fullName: "Research Activity Cell",
-    title: "RESEARCH & SCHOLARLY INQUIRY",
-    number: "02",
-    tagline: "Cultivating scientific rigor, literature exploration, and impactful academic publications.",
-    vision:
-      "To instill a culture of academic rigor and deep scientific inquiry, guiding aspiring student researchers to investigate open frontiers in computing and publish peer-reviewed papers in high-impact journals and conferences.",
-    description:
-      "The Research Activity Cell facilitates reading groups, methodology bootcamps, dataset curation, and faculty mentorship to turn undergraduate research into publishable contributions.",
-    focus: [
-      "Literature Surveys & Paper Reading Groups",
-      "Empirical Benchmarking & Reproducibility",
-      "Technical Writing & Peer-Review Prep",
-      "Systems Security & Cryptographic Protocols",
-    ],
-    route: "/cells/rac",
-    color: {
-      accent: "text-purple-600",
-      border: "border-purple-200 dark:border-purple-900/50",
-      bgBadge: "bg-purple-50 dark:bg-purple-950/50",
-      textBadge: "text-purple-700 dark:text-purple-400",
-      gradient: "from-purple-600 to-pink-600",
-    },
-  },
-  {
     id: "CPC",
     name: "CPC",
     fullName: "Competitive Programming Cell",
     title: "COMPETITIVE CODING & ALGORITHMS",
-    number: "03",
-    tagline: "Mastering algorithms, data structures, and high-velocity problem-solving.",
+    number: "02",
+    tagline:
+      "Building strong coding fundamentals, advanced problem-solving skills, and competitive excellence.",
     vision:
-      "To foster algorithmic mastery and analytical thinking across the student community, training students to conquer ICPC, global coding challenges, and technical engineering interviews at top tech companies.",
+      "Build strong coding fundamentals and competitive excellence across programming contests, technical interviews, and real-world development.",
     description:
-      "The Competitive Programming Cell conducts structured weekly contests, editorial walkthroughs, algorithmic ladders, and peer-coaching sprints to elevate departmental coding prowess.",
+      "The Competitive Programming Cell develops strong coding fundamentals and advanced problem-solving abilities. It provides students with a structured environment to practise Data Structures & Algorithms, improve algorithmic thinking, prepare for technical interviews, and participate in programming competitions through regular practice sessions, coding contests, and bootcamps.",
     focus: [
-      "Advanced Data Structures & Graph Algorithms",
-      "Dynamic Programming & Mathematical Foundations",
-      "ICPC / Codeforces Ladder Training",
-      "Systematic Contest Editorial Walkthroughs",
+      "Data Structures & Algorithms",
+      "Competitive Programming Contests",
+      "Technical Interview Preparation",
+      "Algorithmic Problem-Solving & Ladders",
     ],
     route: "/cells/cpc",
     color: {
@@ -119,6 +95,60 @@ export const cellsData: CellInfo[] = [
       bgBadge: "bg-emerald-50 dark:bg-emerald-950/50",
       textBadge: "text-emerald-700 dark:text-emerald-400",
       gradient: "from-emerald-600 to-teal-600",
+    },
+  },
+  {
+    id: "DCT",
+    name: "DCT",
+    fullName: "Design & Creativity Team",
+    title: "UI/UX DESIGN & DIGITAL MEDIA",
+    number: "03",
+    tagline:
+      "Building the Council's digital and visual identity through UI/UX design, web development, and creative media.",
+    vision:
+      "Build a strong digital and visual identity for the Council while providing students with hands-on experience and conducting workshops that support creative and technical growth.",
+    description:
+      "The Design & Creativity Team develops the digital and visual identity of the CSE Technical Council. It works on UI/UX design, web development, graphic design, presentation assets, event creatives, and other communication materials that support Council initiatives.",
+    focus: [
+      "UI/UX Design & User Research",
+      "Web & Frontend Development",
+      "Graphic Design & Visual Branding",
+      "Creative Media & Event Assets",
+    ],
+    route: "/cells/dct",
+    color: {
+      accent: "text-amber-600",
+      border: "border-amber-200 dark:border-amber-900/50",
+      bgBadge: "bg-amber-50 dark:bg-amber-950/50",
+      textBadge: "text-amber-700 dark:text-amber-400",
+      gradient: "from-amber-500 to-orange-600",
+    },
+  },
+  {
+    id: "RAC",
+    name: "RAC",
+    fullName: "Research Activity Cell",
+    title: "RESEARCH & SCHOLARLY INQUIRY",
+    number: "04",
+    tagline:
+      "Cultivating a research-driven mindset and positioning the department as a hub for student-centric research.",
+    vision:
+      "Cultivate a research-driven mindset and position the department as a hub for student-centric research by guiding students through methodology, technical writing, publications, and patents.",
+    description:
+      "The Research Activity Cell nurtures a research-driven environment in which students learn to identify problems, explore domains, review existing work, develop ideas, and communicate their findings through research cohorts, faculty guidance, senior mentorship, and collaborative team formation.",
+    focus: [
+      "Research Methodology & Domain Exploration",
+      "Technical Writing & Scientific Communication",
+      "Peer-Reviewed Publications & Conferences",
+      "Patents & Innovative Project Development",
+    ],
+    route: "/cells/rac",
+    color: {
+      accent: "text-purple-600",
+      border: "border-purple-200 dark:border-purple-900/50",
+      bgBadge: "bg-purple-50 dark:bg-purple-950/50",
+      textBadge: "text-purple-700 dark:text-purple-400",
+      gradient: "from-purple-600 to-pink-600",
     },
   },
 ];
@@ -154,20 +184,6 @@ export const facultyCoordinators: CoordinatorMember[] = [
     },
   },
   {
-    id: "fac-rac",
-    name: "Ms. Attiuttama",
-    role: "Faculty Coordinator",
-    cell: "RAC",
-    institution: "JSS University, Noida",
-    quote: "Cultivating research mindset and scientific inquiry across modern computing paradigms.",
-    image: "attiuttma",
-    socials: {
-      linkedin: "#",
-      email: "#",
-      instagram: "#",
-    },
-  },
-  {
     id: "fac-cpc",
     name: "Mr. Vinooth Prakash",
     role: "Faculty Coordinator",
@@ -181,12 +197,26 @@ export const facultyCoordinators: CoordinatorMember[] = [
       instagram: "#",
     },
   },
+  {
+    id: "fac-rac",
+    name: "Ms. Attiuttama",
+    role: "Faculty Coordinator",
+    cell: "RAC",
+    institution: "JSS University, Noida",
+    quote: "Cultivating research mindset and scientific inquiry across modern computing paradigms.",
+    image: "attiuttma",
+    socials: {
+      linkedin: "#",
+      email: "#",
+      instagram: "#",
+    },
+  },
 ];
 
 export const studentCoordinators: CoordinatorMember[] = [
   {
     id: "stu-aic-1",
-    name: "Yash gupta",
+    name: "Yash Gupta",
     role: "Lead Coordinator",
     cell: "AIC",
     quote: "Driving builder sprints, hands-on hackathons, and technical incubations for the department.",
@@ -195,20 +225,6 @@ export const studentCoordinators: CoordinatorMember[] = [
       linkedin: "https://www.linkedin.com/in/yash-gupta18/",
       github: "https://github.com/yashgupta184",
       instagram: "#",
-    },
-  },
-  {
-    id: "stu-rac-1",
-    name: "Utkarsh Srivastava",
-    role: "Lead Coordinator",
-    cell: "RAC",
-    quote:
-      "I like asking 'what if?' almost as much as I like figuring out 'how do we build it?' Here's to more experiments, more ideas, and hopefully a few things that actually work.",
-    image: "utkarsh-srivastava",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/utkarshsri1139/",
-      github: "https://github.com/utkarshsrivastava1139",
-      instagram: "https://www.instagram.com/utkarshsri1139/",
     },
   },
   {
@@ -225,16 +241,30 @@ export const studentCoordinators: CoordinatorMember[] = [
       instagram: "https://www.instagram.com/ujjwal_insane/",
     },
   },
+  {
+    id: "stu-rac-1",
+    name: "Utkarsh Srivastava",
+    role: "Lead Coordinator",
+    cell: "RAC",
+    quote:
+      "I like asking 'what if?' almost as much as I like figuring out 'how do we build it?' Here's to more experiments, more ideas, and hopefully a few things that actually work.",
+    image: "utkarsh-srivastava",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/utkarshsri1139/",
+      github: "https://github.com/utkarshsrivastava1139",
+      instagram: "https://www.instagram.com/utkarshsri1139/",
+    },
+  },
 ];
 
 export const completeTeamMembers: TeamMember[] = [
   // =========================================================================
-  // AI INNOVATION CELL (AIC)
+  // 1. AI INNOVATION CELL (AIC)
   // =========================================================================
   {
     id: "tm-aic-1",
     name: "Navya Gupta",
-    role: "Core Team Member",
+    role: "Student Member",
     cell: "AIC",
     quote: "You never lose, you either win or learn",
     image: "navya-gupta",
@@ -245,183 +275,56 @@ export const completeTeamMembers: TeamMember[] = [
   },
   {
     id: "tm-aic-2",
-    name: "Team Member Name",
-    role: "AI Systems Engineer",
+    name: "Sanchita Singh",
+    role: "Student Member",
     cell: "AIC",
-    quote: "Architecting backend systems and distributed platforms for council initiatives.",
-    image: "/images/team/placeholder-team-aic-2.jpg",
+    quote: "Exploring machine learning architectures, Generative AI models, and real-world intelligence.",
     socials: {
       linkedin: "#",
       github: "#",
-      instagram: "#",
     },
   },
   {
     id: "tm-aic-3",
-    name: "Team Member Name",
-    role: "Full-Stack Developer",
+    name: "Aryan Garg",
+    role: "Student Member",
     cell: "AIC",
-    quote: "Building low-latency pipelines and cloud infrastructure for university projects.",
-    image: "/images/team/placeholder-team-aic-3.jpg",
+    quote: "Building autonomous agents, intelligent workflows, and scalable AI solutions.",
     socials: {
       linkedin: "#",
       github: "#",
-      instagram: "#",
     },
   },
   {
     id: "tm-aic-4",
-    name: "Team Member Name",
-    role: "Machine Learning Engineer",
+    name: "Ipshita Srivastava",
+    role: "Student Member",
     cell: "AIC",
-    quote: "Developing neural architectures and fine-tuning domain-specific LLM workflows.",
-    image: "/images/team/placeholder-team-aic-4.jpg",
+    quote: "Passionate about generative AI, automation pipelines, and hands-on collaborative learning.",
     socials: {
       linkedin: "#",
       github: "#",
-      instagram: "#",
     },
   },
   {
     id: "tm-aic-5",
-    name: "Team Member Name",
-    role: "Computer Vision Specialist",
+    name: "Harshit Jain",
+    role: "Student Member",
     cell: "AIC",
-    quote: "Implementing real-time visual perception algorithms and edge deployment models.",
-    image: "/images/team/placeholder-team-aic-5.jpg",
+    quote: "Transforming cutting-edge AI research and foundation models into practical applications.",
     socials: {
       linkedin: "#",
       github: "#",
-      instagram: "#",
-    },
-  },
-  {
-    id: "tm-aic-6",
-    name: "Team Member Name",
-    role: "NLP & Agentic Systems Lead",
-    cell: "AIC",
-    quote: "Building RAG pipelines, retrieval strategies, and multi-agent coordination frameworks.",
-    image: "/images/team/placeholder-team-aic-6.jpg",
-    socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
-    },
-  },
-  {
-    id: "tm-aic-7",
-    name: "Team Member Name",
-    role: "Cloud & DevOps Architect",
-    cell: "AIC",
-    quote: "Scaling high-availability clusters and CI/CD pipelines for production deployments.",
-    image: "/images/team/placeholder-team-aic-7.jpg",
-    socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
-    },
-  },
-  {
-    id: "tm-aic-8",
-    name: "Team Member Name",
-    role: "Backend & API Developer",
-    cell: "AIC",
-    quote: "Designing secure, high-throughput microservices and database schemas.",
-    image: "/images/team/placeholder-team-aic-8.jpg",
-    socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
-    },
-  },
-  {
-    id: "tm-aic-9",
-    name: "Team Member Name",
-    role: "Technical Operations & Sprints",
-    cell: "AIC",
-    quote: "Coordinating hackathon sprints, product roadmaps, and technical incubation.",
-    image: "/images/team/placeholder-team-aic-9.jpg",
-    socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
     },
   },
 
   // =========================================================================
-  // RESEARCH ACTIVITY CELL (RAC)
-  // =========================================================================
-  {
-    id: "tm-rac-1",
-    name: "Mohd Sahal Parvez",
-    role: "Core Team Member",
-    cell: "RAC",
-    quote: "The Social Network (Timestamp: 1:51:06)",
-    image: "mohd-sahal-parvez",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/sehal-pervez",
-    },
-  },
-  {
-    id: "tm-rac-2",
-    name: "Krish Singh",
-    role: "Core Team Member",
-    cell: "RAC",
-    quote: "I'm not chasing perfection. I'm building someone I'll be proud of.",
-    image: "krish-singh",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/krish-singh-090071307",
-      github: "https://github.com/KRISH2006-IIT",
-      instagram: "https://www.instagram.com/krishsingh__",
-    },
-  },
-  {
-    id: "tm-rac-3",
-    name: "Team Member Name",
-    role: "Empirical Benchmarking Lead",
-    cell: "RAC",
-    quote: "Validating reproducibility, statistical significance, and experimental baselines.",
-    image: "/images/team/placeholder-team-rac-3.jpg",
-    socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
-    },
-  },
-  {
-    id: "tm-rac-4",
-    name: "Team Member Name",
-    role: "Data & Literature Analyst",
-    cell: "RAC",
-    quote: "Synthesizing literature reviews and survey frameworks across cutting-edge CS domains.",
-    image: "/images/team/placeholder-team-rac-4.jpg",
-    socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
-    },
-  },
-  {
-    id: "tm-rac-5",
-    name: "Team Member Name",
-    role: "Scientific Publications Lead",
-    cell: "RAC",
-    quote: "Drafting technical manuscripts and structuring submissions for peer-reviewed conferences.",
-    image: "/images/team/placeholder-team-rac-5.jpg",
-    socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
-    },
-  },
-
-  // =========================================================================
-  // COMPETITIVE PROGRAMMING CELL (CPC)
+  // 2. COMPETITIVE PROGRAMMING CELL (CPC)
   // =========================================================================
   {
     id: "tm-cpc-1",
     name: "Alok Pal",
-    role: "Competitive Programmer",
+    role: "Student Member",
     cell: "CPC",
     quote: "Face the fear till you get over from it",
     image: "alok-pal",
@@ -434,7 +337,7 @@ export const completeTeamMembers: TeamMember[] = [
   {
     id: "tm-cpc-2",
     name: "Kartik Gupta",
-    role: "Problem Setter",
+    role: "Student Member",
     cell: "CPC",
     quote: "Let me fall if I must the person I am becoming will catch me",
     image: "kartik-gupta",
@@ -447,7 +350,7 @@ export const completeTeamMembers: TeamMember[] = [
   {
     id: "tm-cpc-3",
     name: "Luv Mangla",
-    role: "Competitive Programmer",
+    role: "Student Member",
     cell: "CPC",
     quote: "Somewhere between deadlines, dreams, and late night ideas - I found myself.",
     image: "luv-mangla",
@@ -460,7 +363,7 @@ export const completeTeamMembers: TeamMember[] = [
   {
     id: "tm-cpc-4",
     name: "Anshul Kanswal",
-    role: "Contest Platform Coordinator",
+    role: "Student Member",
     cell: "CPC",
     quote: "Managing leaderboard systems, editorial walkthroughs, and weekly coding ladders.",
     image: "anshul-kanswal",
@@ -468,6 +371,93 @@ export const completeTeamMembers: TeamMember[] = [
       linkedin: "#",
       github: "#",
       instagram: "#",
+    },
+  },
+
+  // =========================================================================
+  // 3. DESIGN & CREATIVITY TEAM (DCT)
+  // =========================================================================
+  {
+    id: "tm-dct-1",
+    name: "Garvit Garg",
+    role: "Student Member",
+    cell: "DCT",
+    quote: "Crafting intuitive digital experiences, design systems, and cohesive brand identities.",
+    socials: {
+      linkedin: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "tm-dct-2",
+    name: "Harsh Verma",
+    role: "Student Member",
+    cell: "DCT",
+    quote: "Bridging creative visual aesthetics with modern frontend engineering and interaction design.",
+    socials: {
+      linkedin: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "tm-dct-3",
+    name: "Aaryan Bhardwaj",
+    role: "Student Member",
+    cell: "DCT",
+    quote: "Designing expressive visuals, presentation media, and engaging event creatives for the Council.",
+    socials: {
+      linkedin: "#",
+      github: "#",
+    },
+  },
+
+  // =========================================================================
+  // 4. RESEARCH ACTIVITY CELL (RAC)
+  // =========================================================================
+  {
+    id: "tm-rac-1",
+    name: "Mohd. Sahal Parvez",
+    role: "Student Member",
+    cell: "RAC",
+    quote: "The Social Network (Timestamp: 1:51:06)",
+    image: "mohd-sahal-parvez",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/sehal-pervez",
+    },
+  },
+  {
+    id: "tm-rac-2",
+    name: "Krish Singh",
+    role: "Student Member",
+    cell: "RAC",
+    quote: "I'm not chasing perfection. I'm building someone I'll be proud of.",
+    image: "krish-singh",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/krish-singh-090071307",
+      github: "https://github.com/KRISH2006-IIT",
+      instagram: "https://www.instagram.com/krishsingh__",
+    },
+  },
+  {
+    id: "tm-rac-3",
+    name: "Divyanshi Verma",
+    role: "Student Member",
+    cell: "RAC",
+    quote: "Investigating emerging computing domains, research methodology, and contributing to academic publications.",
+    socials: {
+      linkedin: "#",
+      github: "#",
+    },
+  },
+  {
+    id: "tm-rac-4",
+    name: "Anshika Mittal",
+    role: "Student Member",
+    cell: "RAC",
+    quote: "Nurturing structured scientific inquiry, technical paper writing, and peer review rigor.",
+    socials: {
+      linkedin: "#",
+      github: "#",
     },
   },
 ];

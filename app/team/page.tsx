@@ -62,9 +62,9 @@ export default function TeamPage() {
                 href="/cells"
                 className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white/90 px-4 py-2 shadow-xs transition-all hover:border-blue-400 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900/90"
               >
-                <span className="font-bold text-blue-600 dark:text-blue-400">03 CELLS</span>
+                <span className="font-bold text-blue-600 dark:text-blue-400">04 WINGS</span>
                 <span className="text-slate-300 dark:text-slate-700">|</span>
-                <span className="text-slate-600 dark:text-slate-300">Innovation &bull; Research &bull; CP</span>
+                <span className="text-slate-600 dark:text-slate-300">AIC &bull; CPC &bull; DCT &bull; RAC</span>
               </Link>
               <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white/90 px-4 py-2 shadow-xs dark:border-slate-800 dark:bg-slate-900/90">
                 <span className="font-bold text-indigo-600 dark:text-indigo-400">JSS UNIVERSITY</span>
@@ -331,7 +331,7 @@ export default function TeamPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-              Discover the full teams, ongoing projects, research publications, and coding tracks across AIC, RAC, and CPC.
+              Discover the full teams, ongoing projects, research publications, creative designs, and coding tracks across AIC, CPC, DCT, and RAC.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -339,7 +339,7 @@ export default function TeamPage() {
                 href="/cells"
                 className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 font-sans text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/35 sm:w-auto"
               >
-                <span>Explore All 3 Cells</span>
+                <span>Explore All 4 Wings</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a

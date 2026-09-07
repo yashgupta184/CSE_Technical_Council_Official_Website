@@ -18,19 +18,19 @@ export function CellsHero() {
           </span>
           <span className="text-slate-300 dark:text-slate-700">&bull;</span>
           <span className="font-mono text-xs font-bold text-blue-600 dark:text-blue-400">
-            CELLS &amp; DOMAINS
+            CELLS &amp; TEAMS
           </span>
         </div>
 
         {/* Display Heading */}
         <h1 className="mt-8 font-sans text-5xl font-black tracking-tight text-slate-950 sm:text-7xl lg:text-8xl leading-none dark:text-white">
-          THREE PILLARS OF <br />
+          FOUR PILLARS OF <br />
           TECHNICAL <span className="text-gradient-primary">EXCELLENCE.</span>
         </h1>
 
         {/* Supporting Copy */}
         <p className="mx-auto mt-6 max-w-2xl text-lg font-normal leading-relaxed text-slate-600 sm:text-xl dark:text-slate-300">
-          The CSE Technical Council operates through three specialized cells &mdash; each driving dedicated domains in product innovation, academic research, and algorithmic mastery.
+          The CSE Technical Council operates through four specialized cells and teams &mdash; driving dedicated domains in product innovation, competitive coding, digital design, and academic research.
         </p>
 
         {/* Interactive Quick Jump Pills */}

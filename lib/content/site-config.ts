@@ -19,8 +19,9 @@ export const navItems = [
     href: "/cells",
     items: [
       { title: "AIC — Innovation", href: "/cells/aic" },
-      { title: "RAC — Research", href: "/cells/rac" },
       { title: "CPC — Competitive Prog.", href: "/cells/cpc" },
+      { title: "DCT — Design & Creativity", href: "/cells/dct" },
+      { title: "RAC — Research", href: "/cells/rac" },
     ],
   },
   { title: "Team", href: "/team" },

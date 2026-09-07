@@ -46,8 +46,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#cells" className="transition-colors hover:text-blue-600">
-                  Three Cells
+                <Link href="/cells" className="transition-colors hover:text-blue-600">
+                  Cells &amp; Teams
                 </Link>
               </li>
               <li>
@@ -58,10 +58,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Three Cells */}
+          {/* Col 3: Council Cells */}
           <div className="space-y-3">
             <h4 className="font-sans text-xs font-bold tracking-wider text-slate-900 uppercase">
-              Council Cells
+              Council Wings
             </h4>
             <ul className="space-y-2 text-xs font-medium">
               <li>
@@ -77,24 +77,35 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/cells/rac"
-                  className="inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-purple-600"
-                >
-                  <span className="rounded bg-purple-50 px-1.5 py-0.5 font-mono text-[10px] font-bold text-purple-600">
-                    02
-                  </span>
-                  RAC &mdash; Research
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/cells/cpc"
                   className="inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-emerald-600"
                 >
                   <span className="rounded bg-emerald-50 px-1.5 py-0.5 font-mono text-[10px] font-bold text-emerald-600">
-                    03
+                    02
                   </span>
                   CPC &mdash; Competitive Prog.
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cells/dct"
+                  className="inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-amber-600"
+                >
+                  <span className="rounded bg-amber-50 px-1.5 py-0.5 font-mono text-[10px] font-bold text-amber-600">
+                    03
+                  </span>
+                  DCT &mdash; Design &amp; Creativity
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cells/rac"
+                  className="inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-purple-600"
+                >
+                  <span className="rounded bg-purple-50 px-1.5 py-0.5 font-mono text-[10px] font-bold text-purple-600">
+                    04
+                  </span>
+                  RAC &mdash; Research
                 </Link>
               </li>
             </ul>
