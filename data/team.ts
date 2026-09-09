@@ -289,10 +289,11 @@ export const completeTeamMembers: TeamMember[] = [
     name: "Aryan Garg",
     role: "Student Member",
     cell: "AIC",
-    quote: "Building autonomous agents, intelligent workflows, and scalable AI solutions.",
+    quote: "You don’t have to be the best today—just be better than you were yesterday",
+    image: "aryan-garg",
     socials: {
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/aryan-garg-a91a52321",
+      github: "https://github.com/AryanGarg-bit",
     },
   },
   {
@@ -300,10 +301,12 @@ export const completeTeamMembers: TeamMember[] = [
     name: "Ipshita Srivastava",
     role: "Student Member",
     cell: "AIC",
-    quote: "Passionate about generative AI, automation pipelines, and hands-on collaborative learning.",
+    quote: "Driven by discipline and consistency, I aim to learn, contribute, and grow with the department",
+    image: "ipshita-shrivastava",
     socials: {
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/ipshita-shrivastava-172162204/",
+      github: "https://github.com/IpshitaShrivastava",
+      instagram: "https://www.instagram.com/ipshita.shrivastava?stkn=dm96djg5ZXR5ZnZv",
     },
   },
   {
@@ -311,10 +314,12 @@ export const completeTeamMembers: TeamMember[] = [
     name: "Harshit Jain",
     role: "Student Member",
     cell: "AIC",
-    quote: "Transforming cutting-edge AI research and foundation models into practical applications.",
+    quote: "Focus get easier when you become emotionally willing to sacrifice things.",
+    image: "harshit-jain",
     socials: {
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/harshit-jain-06544a31b",
+      github: "https://github.com/harshhitjainn16",
+      instagram: "https://www.instagram.com/harshittjain_16/?hl=en"
     },
   },
 
@@ -365,12 +370,12 @@ export const completeTeamMembers: TeamMember[] = [
     name: "Anshul Kanswal",
     role: "Student Member",
     cell: "CPC",
-    quote: "Managing leaderboard systems, editorial walkthroughs, and weekly coding ladders.",
+    quote: "If it comes to you, receive it with gratitude. If it doesn’t, rise with the courage to claim what you believe is yours",
     image: "anshul-kanswal",
     socials: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/anshul-kanswal/",
+      github: "https://github.com/anshulkanswal6-dev",
+      instagram: "https://www.instagram.com/anshulk.01",
     },
   },
 
@@ -383,6 +388,7 @@ export const completeTeamMembers: TeamMember[] = [
     role: "Student Member",
     cell: "DCT",
     quote: "Crafting intuitive digital experiences, design systems, and cohesive brand identities.",
+    image:"garvit-garg",
     socials: {
       linkedin: "#",
       github: "#",
@@ -404,10 +410,11 @@ export const completeTeamMembers: TeamMember[] = [
     name: "Aaryan Bhardwaj",
     role: "Student Member",
     cell: "DCT",
-    quote: "Designing expressive visuals, presentation media, and engaging event creatives for the Council.",
+    quote: "Don’t wait for inspiration. Become the reason someone else feels inspired.",
+    image:"aaryan-bhardwaj",
     socials: {
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/aaryan-bhardwaj007",
+      github: "https://github.com/AAryanCoder340",
     },
   },
 
@@ -454,9 +461,9 @@ export const completeTeamMembers: TeamMember[] = [
     name: "Anshika Mittal",
     role: "Student Member",
     cell: "RAC",
-    quote: "Nurturing structured scientific inquiry, technical paper writing, and peer review rigor.",
+    quote: "Ad astra per aspera",
     socials: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/anshika-mittal-587975333",
       github: "#",
     },
   },
