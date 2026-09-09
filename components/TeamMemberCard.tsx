@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { TeamMember } from "@/data/team";
@@ -52,6 +52,8 @@ export function TeamMemberCard({
     border: "hover:border-slate-300 dark:hover:border-slate-600",
   };
 
+  const [quoteVisible, setQuoteVisible] = useState(false);
+
   return (
     <div
       className={`group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60 dark:border-slate-800 dark:bg-slate-900/80 dark:hover:shadow-black/60 ${
@@ -70,7 +72,10 @@ export function TeamMemberCard({
       </div>
 
       {/* Image container with 100xSchool rounded border */}
-      <div className="relative my-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-100 border border-slate-200/70 dark:bg-slate-800 dark:border-slate-700/80">
+      <div
+        className="relative my-4 aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-100 border border-slate-200/70 dark:bg-slate-800 dark:border-slate-700/80 cursor-pointer"
+        onClick={() => setQuoteVisible((v) => !v)}
+      >
         {imageUrl ? (
           <Image
             src={imageUrl}
@@ -98,7 +103,11 @@ export function TeamMemberCard({
 
         {/* Hover Motivation Quote overlay */}
         {quote && (
-          <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950/90 via-slate-900/60 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div
+            className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-slate-950/90 via-slate-900/60 to-transparent p-4 transition-opacity duration-300 ${
+              quoteVisible ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+            }`}
+          >
             <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-blue-400 mb-1">
               {"//"} PERSPECTIVE
             </span>
