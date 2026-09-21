@@ -400,9 +400,10 @@ export const completeTeamMembers: TeamMember[] = [
     role: "Student Member",
     cell: "DCT",
     quote: "Bridging creative visual aesthetics with modern frontend engineering and interaction design.",
+    image: "https://res.cloudinary.com/dh8cqlngr/image/upload/v1789994097/ChatGPT_Image_Sep_21_2026_05_58_11_PM_edklpv.png",
     socials: {
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/harshverma727",
+      github: "https://github.com/hrshvv",
     },
   },
   {
