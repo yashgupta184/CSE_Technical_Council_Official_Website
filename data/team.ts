@@ -279,6 +279,7 @@ export const completeTeamMembers: TeamMember[] = [
     role: "Student Member",
     cell: "AIC",
     quote: "Exploring machine learning architectures, Generative AI models, and real-world intelligence.",
+    image: "sanchita-singh",
     socials: {
       linkedin: "https://www.linkedin.com/in/sanchita-singh-b63a9a324/",
       github: "https://github.com/HeerSinghpro",
@@ -451,10 +452,12 @@ export const completeTeamMembers: TeamMember[] = [
     name: "Divyanshi Verma",
     role: "Student Member",
     cell: "RAC",
-    quote: "Investigating emerging computing domains, research methodology, and contributing to academic publications.",
+    quote: "Consistent. Persistent. Unstoppable.",
+    image: "divyanshi-verma",
     socials: {
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/divyanshiverma15?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      github: "https://github.com/vdivyanshi",
+      instagram: "https://www.instagram.com/divyanshiverma15_?stkn=Y3N3ZWo3cTN0dGh2",
     },
   },
   {
@@ -463,6 +466,7 @@ export const completeTeamMembers: TeamMember[] = [
     role: "Student Member",
     cell: "RAC",
     quote: "Ad astra per aspera",
+    image: "anshika-mittal",
     socials: {
       linkedin: "https://www.linkedin.com/in/anshika-mittal-587975333",
       github: "#",
