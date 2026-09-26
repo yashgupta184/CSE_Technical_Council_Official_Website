@@ -8,6 +8,8 @@ type MediaPlaceholderProps = {
   alt: string;
   /** Aspect / height utilities for the outer container. */
   className?: string;
+  /** Fit the whole image inside the frame instead of cropping it. */
+  fit?: "cover" | "contain";
   /** Short caption shown inside the empty slot, e.g. "Event photo". */
   label?: string;
   sizes?: string;
@@ -23,6 +25,7 @@ export function MediaPlaceholder({
   src,
   alt,
   className = "aspect-video",
+  fit = "cover",
   label = "Photo to be added",
   sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw",
   priority = false,
@@ -39,7 +42,7 @@ export function MediaPlaceholder({
           fill
           sizes={sizes}
           priority={priority}
-          className="object-cover"
+          className={fit === "contain" ? "object-contain p-3" : "object-cover"}
         />
       ) : (
         /* Placeholder slot - replace by setting `image` / `images` in data/events.ts */

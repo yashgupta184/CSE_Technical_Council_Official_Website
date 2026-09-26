@@ -280,8 +280,8 @@ export const completeTeamMembers: TeamMember[] = [
     cell: "AIC",
     quote: "Exploring machine learning architectures, Generative AI models, and real-world intelligence.",
     socials: {
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/sanchita-singh-b63a9a324/",
+      github: "https://github.com/HeerSinghpro",
     },
   },
   {

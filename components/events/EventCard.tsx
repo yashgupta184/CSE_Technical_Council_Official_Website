@@ -17,6 +17,8 @@ export function EventCard({ event }: { event: CouncilEvent }) {
         <MediaPlaceholder
           src={event.image}
           alt={`Photograph from ${event.title}`}
+          className="aspect-[4/5]"
+          fit="contain"
           label="Event photo to be added"
         />
         <span
