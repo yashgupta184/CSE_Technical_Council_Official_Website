@@ -1,12 +1,15 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { CellInfo, TeamMember, CoordinatorMember } from "@/data/team";
 import { getImageUrl } from "@/lib/image-utils";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
-import { QuoteIcon, LinkedInIcon, MailIcon, InstagramIcon, GithubIcon, ArrowRight } from "@/components/Icons";
+import {
+  QuoteIcon,
+  LinkedInIcon,
+  MailIcon,
+  InstagramIcon,
+  GithubIcon,
+} from "@/components/Icons";
 
 interface CellSectionProps {
   cell: CellInfo;
@@ -109,108 +112,142 @@ export function CellSection({
         </div>
 
         {/* ================================================================= */}
+        {/* ================================================================= */}
         {/* PART 2: STUDENT COORDINATOR SPOTLIGHT                             */}
         {/* ================================================================= */}
         <div className="mt-16 pt-12 border-t border-slate-200/80 dark:border-slate-800/80">
-          <div className="mb-8 flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
-            <div>
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-0.5 font-mono text-xs font-bold text-blue-700 dark:bg-blue-950/60 dark:text-blue-400">
-                <span>🚀</span> STUDENT LEADERSHIP
-              </div>
-              <h3 className="mt-2 font-sans text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
-                Cell Coordinator
-              </h3>
-            </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-              DIRECT LEAD FOR {cell.id} INITIATIVES
-            </p>
+          <div className="mb-10 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 font-mono text-xs font-bold text-blue-700 dark:border-blue-900 dark:bg-blue-950/60 dark:text-blue-400">
+            <span>🎯</span> 02 {"//"} CELL COORDINATOR &bull; {cell.id}
           </div>
 
           {studentCoordinator ? (
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-12 items-center rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/90 sm:p-8">
-              {/* Coordinator Avatar / Monogram */}
-              <div className="md:col-span-4 flex flex-col items-center justify-center text-center">
-                <div className="relative aspect-square w-36 overflow-hidden rounded-2xl bg-gradient-to-b from-slate-100 to-slate-200 border border-slate-200 shadow-sm dark:from-slate-800 dark:to-slate-900 dark:border-slate-700">
-                  {coordinatorImageUrl ? (
-                    <Image
-                      src={coordinatorImageUrl}
-                      alt={studentCoordinator.name}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  ) : (
-                    <>
-                      <div className="absolute inset-0 bg-dot-pattern opacity-60" />
-                      <div className="flex h-full w-full items-center justify-center text-3xl font-black font-sans text-slate-900 dark:text-white">
-                        {studentCoordinator.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .slice(0, 2)
-                          .join("")}
-                      </div>
-                    </>
-                  )}
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14 items-center">
+              {/* Left Portrait Column */}
+              <div className="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-start">
+                <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-lg shadow-slate-200/50 dark:border-slate-800 dark:bg-slate-900/90 w-full max-w-[340px]">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-gradient-to-b from-slate-100 to-slate-200 border border-slate-200/60 dark:from-slate-800 dark:to-slate-900 dark:border-slate-700">
+                    {coordinatorImageUrl ? (
+                      <Image
+                        src={coordinatorImageUrl}
+                        alt={studentCoordinator.name}
+                        fill
+                        sizes="(max-width: 768px) 340px, 340px"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-dot-pattern opacity-60" />
+                        <div className="flex h-full w-full flex-col items-center justify-center p-8 text-center">
+                          <div className="flex h-24 w-24 items-center justify-center rounded-3xl border border-slate-300 bg-white font-sans text-3xl font-black text-slate-900 shadow-md shadow-blue-500/5 transition-transform duration-500 group-hover:scale-105 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
+                            {studentCoordinator.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .slice(0, 2)
+                              .join("")}
+                          </div>
+                          <div className="mt-4 font-sans text-sm font-bold text-slate-800 dark:text-slate-200">
+                            {studentCoordinator.name}
+                          </div>
+                          <div className="mt-1 font-mono text-xs font-medium text-blue-600 dark:text-blue-400">
+                            {studentCoordinator.role} &bull; {cell.id} Cell
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
-                <h4 className="mt-4 font-sans text-lg font-bold text-slate-900 dark:text-white">
-                  {studentCoordinator.name}
-                </h4>
-                <p className="font-mono text-xs font-semibold text-blue-600 dark:text-blue-400">
-                  {studentCoordinator.role} &bull; {cell.id} Cell
-                </p>
               </div>
 
-              {/* Coordinator Bio & Perspective */}
-              <div className="md:col-span-8 space-y-4 border-t border-slate-100 pt-6 md:border-t-0 md:border-l md:border-slate-100 md:pl-8 dark:border-slate-800">
-                <div className="font-mono text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                  {"//"} COORDINATOR PERSPECTIVE
-                </div>
-                <blockquote className="font-sans text-base sm:text-lg font-medium italic leading-relaxed text-slate-800 dark:text-slate-200">
-                  &ldquo;{studentCoordinator.quote}&rdquo;
-                </blockquote>
+              {/* Right Content Column */}
+              <div className="lg:col-span-7 xl:col-span-8">
+                <h2 className="font-sans text-3xl font-black tracking-tight text-slate-950 sm:text-4xl lg:text-5xl leading-tight dark:text-white">
+                  THE PERSON <br />
+                  SETTING THE{" "}
+                  <span className="text-gradient-primary">DIRECTION.</span>
+                </h2>
 
-                {/* Social links */}
-                <div className="pt-2 flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500">
-                    CONNECT:
+                <div className="mt-6 space-y-2 border-l-4 border-blue-600 pl-6">
+                  <h3 className="text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
+                    {studentCoordinator.name}
+                  </h3>
+                  <p className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-wider dark:text-blue-400">
+                    {studentCoordinator.role.toUpperCase()} &mdash; {cell.fullName.toUpperCase()} ({cell.id})
+                  </p>
+                  <p className="text-sm text-slate-600 font-medium dark:text-slate-400">
+                    Department of CSE and Allied Branches &bull; JSS University, Noida
+                  </p>
+                </div>
+
+                {/* Vision / Perspective Box */}
+                {studentCoordinator.quote && (
+                  <div className="mt-8 rounded-2xl border border-blue-100 bg-white p-6 shadow-sm sm:p-7 dark:border-slate-800 dark:bg-slate-900/80">
+                    <div className="flex items-center gap-2 font-mono text-xs font-bold text-blue-600 uppercase tracking-wider dark:text-blue-400">
+                      <QuoteIcon className="h-4 w-4 text-blue-500" />
+                      VISION FOR THE CELL
+                    </div>
+                    <blockquote className="mt-3 font-sans text-base sm:text-lg font-semibold italic leading-relaxed text-slate-800 dark:text-slate-200">
+                      &ldquo;{studentCoordinator.quote}&rdquo;
+                    </blockquote>
+                    <p className="mt-2.5 text-xs text-slate-600 leading-normal dark:text-slate-400">
+                      Empowering students to innovate, collaborate, and build foundational technical excellence in {cell.fullName}.
+                    </p>
+                  </div>
+                )}
+
+                {/* Social Connect */}
+                <div className="mt-6 flex flex-wrap items-center gap-3 pt-2 font-mono text-xs text-slate-600 dark:text-slate-400">
+                  <span className="font-bold text-slate-400 uppercase tracking-wider dark:text-slate-500">
+                    {"//"} CONNECT:
                   </span>
                   {studentCoordinator.socials.linkedin && (
                     <a
                       href={studentCoordinator.socials.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-blue-400"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 font-medium text-slate-700 shadow-xs transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-blue-400"
                     >
                       <LinkedInIcon className="h-3.5 w-3.5" /> LinkedIn
                     </a>
                   )}
                   {studentCoordinator.socials.github && (
                     <a
-                      href={studentCoordinator.socials.github.startsWith("http") ? studentCoordinator.socials.github : `https://github.com/${studentCoordinator.socials.github.replace(/^@/, "")}`}
+                      href={
+                        studentCoordinator.socials.github.startsWith("http")
+                          ? studentCoordinator.socials.github
+                          : `https://github.com/${studentCoordinator.socials.github.replace(/^@/, "")}`
+                      }
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:border-slate-400 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 font-medium text-slate-700 shadow-xs transition-colors hover:border-slate-400 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white"
                     >
                       <GithubIcon className="h-3.5 w-3.5" /> GitHub
                     </a>
                   )}
-                  {studentCoordinator.socials.instagram && studentCoordinator.socials.instagram !== "#" && (
-                    <a
-                      href={studentCoordinator.socials.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:border-pink-300 hover:text-pink-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-pink-400"
-                    >
-                      <InstagramIcon className="h-3.5 w-3.5" /> Instagram
-                    </a>
-                  )}
-                  {studentCoordinator.socials.email && studentCoordinator.socials.email !== "#" && studentCoordinator.socials.email !== "" && (
-                    <a
-                      href={studentCoordinator.socials.email.startsWith("mailto:") ? studentCoordinator.socials.email : `mailto:${studentCoordinator.socials.email}`}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-blue-400"
-                    >
-                      <MailIcon className="h-3.5 w-3.5" /> Email
-                    </a>
-                  )}
+                  {studentCoordinator.socials.instagram &&
+                    studentCoordinator.socials.instagram !== "#" && (
+                      <a
+                        href={studentCoordinator.socials.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 font-medium text-slate-700 shadow-xs transition-colors hover:border-pink-300 hover:text-pink-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-pink-400"
+                      >
+                        <InstagramIcon className="h-3.5 w-3.5" /> Instagram
+                      </a>
+                    )}
+                  {studentCoordinator.socials.email &&
+                    studentCoordinator.socials.email !== "#" &&
+                    studentCoordinator.socials.email !== "" && (
+                      <a
+                        href={
+                          studentCoordinator.socials.email.startsWith("mailto:")
+                            ? studentCoordinator.socials.email
+                            : `mailto:${studentCoordinator.socials.email}`
+                        }
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3.5 py-1.5 font-medium text-slate-700 shadow-xs transition-colors hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-blue-400"
+                      >
+                        <MailIcon className="h-3.5 w-3.5" /> Department Email
+                      </a>
+                    )}
                 </div>
               </div>
             </div>
@@ -218,6 +255,7 @@ export function CellSection({
             <p className="text-sm text-slate-500">Student coordinator to be announced.</p>
           )}
         </div>
+
 
         {/* ================================================================= */}
         {/* PART 3: CELL TEAM MEMBERS GRID                                    */}
