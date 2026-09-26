@@ -29,10 +29,17 @@ export function Footer() {
             <p className="max-w-md text-xs font-medium leading-relaxed text-slate-500 dark:text-slate-400">
               Department of CSE and Allied Branches &middot; JSS University, Noida (UP), India.
             </p>
-            <div className="inline-flex flex-wrap items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[11px] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
-              <span className="font-semibold text-blue-600 dark:text-blue-400">[COORD // DR. DHIRAJ PANDEY]</span>
-              <span>&bull;</span>
-              <span>[SESSION 2025&ndash;2026]</span>
+            <p className="max-w-md text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+              Empowering students through innovation, research, hands-on engineering, and collaborative technical excellence.
+            </p>
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <div className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[11px] text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                </span>
+                <span className="font-semibold text-blue-600 dark:text-blue-400">[INNOVATE // BUILD // LEAD]</span>
+              </div>
             </div>
           </div>
 

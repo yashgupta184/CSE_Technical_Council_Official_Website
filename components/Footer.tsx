@@ -22,10 +22,11 @@ export function Footer() {
               <br />
               JSS University, Noida (UP), India.
             </p>
+            <p className="max-w-md text-xs leading-relaxed text-slate-500 font-normal">
+              Empowering students through innovation, research, hands-on engineering, and collaborative technical excellence.
+            </p>
             <div className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-[11px] text-slate-600">
-              <span className="font-semibold text-blue-600">[COORD // DR. DHIRAJ PANDEY]</span>
-              <span>&bull;</span>
-              <span>[SESSION 2025&ndash;2026]</span>
+              <span className="font-semibold text-blue-600">[INNOVATE // BUILD // LEAD]</span>
             </div>
           </div>
 
