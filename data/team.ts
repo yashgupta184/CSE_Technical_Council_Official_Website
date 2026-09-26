@@ -469,7 +469,8 @@ export const completeTeamMembers: TeamMember[] = [
     image: "anshika-mittal",
     socials: {
       linkedin: "https://www.linkedin.com/in/anshika-mittal-587975333",
-      github: "#",
+      github: "https://github.com/anshikam9902-lgtm",
+      instagram: "https://www.instagram.com/anshika.m_408?stkn=MWw3dXlycnUya3d5YQ=="
     },
   },
 ];
